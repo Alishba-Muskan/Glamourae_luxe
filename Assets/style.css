@@ -1,0 +1,393 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', sans-serif;
+     background: black;
+     color: white;
+ }
+
+
+ /* ===== Navbar ===== */
+ .upper-navbar {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 15px 45px;
+     background-color: black;
+     border-bottom: 0.1px solid #e4002a;
+     color: white;
+     flex-wrap: wrap;
+ }
+
+ .upper-left,
+ .upper-right {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
+
+ .logo {
+     text-align: center;
+     margin-left: -10rem;
+     flex: 1;
+     font-size: 1.5em;
+ }
+
+ .icon {
+     cursor: pointer;
+     color: white;
+     font-size: 1.2em;
+ }
+
+ .search-bar {
+     display: flex;
+     align-items: center;
+     background: black;
+     padding: 5px 10px;
+     background-color: black;
+     border-radius: 3px;
+ }
+
+ .search-bar i {
+     color: whitesmoke;
+     margin-right: 14px;
+ }
+
+ .search-bar input {
+     border: none;
+     border-radius: 8px;
+     border-bottom: 1px solid #ffffff6c;
+     background-color: black;
+     outline: none;
+     color: white;
+     padding: 8px 20px;
+     padding-right: 80px;
+     z-index: 999;
+ }
+
+ .search-bar input:focus {
+     background: black;
+ }
+
+ .search-bar input::placeholder {
+     color: rgba(255, 255, 255, 0.74);
+ }
+
+
+ .full-search input::placeholder {
+     color: rgba(255, 255, 255, 0.7);
+ }
+
+ .menu-icon {
+     display: none;
+     font-size: 1.5em;
+     cursor: pointer;
+ }
+
+ .full-search {
+     display: none;
+     width: 100%;
+     background: black;
+     padding: 10px;
+     padding-top: 3%;
+ }
+
+ .full-search input {
+     width: 100%;
+     padding: 12px;
+     background: black;
+     color: white;
+     border: none;
+     border-bottom: 1px solid white;
+     border-radius: 8px;
+ }
+
+ .full-search input:focus {
+     background-color: black;
+     outline: none;
+ }
+
+ .lower-navbar {
+     background-color: rgb(41, 35, 35);
+     display: flex;
+     justify-content: center;
+     padding: 6px 0px;
+ }
+
+ .nav-links {
+     display: flex;
+     gap: 28px;
+     list-style: none;
+     color: white;
+ }
+
+ .nav-links li {
+     position: relative;
+ }
+
+ .nav-links li a {
+     text-decoration: none;
+     color: white;
+     padding: 5px 10px;
+     font-size: 0.99rem;
+     display: block;
+ }
+
+
+ .dropdown-menu {
+     display: none;
+     position: absolute;
+     top: 35px;
+     background: #555;
+     min-width: 160px;
+     border-radius: 4px;
+     z-index: 999;
+ }
+
+ .dropdown-menu li a {
+     padding: 10px;
+     color: white;
+     white-space: nowrap;
+ }
+
+ .dropdown:hover .dropdown-menu {
+     display: block;
+ }
+
+ /* ===== Sidebar ===== */
+ .sidebar {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 250px;
+     height: 100%;
+     background-color: #222;
+     padding: 20px;
+     color: white;
+     z-index: 1000;
+ }
+
+ .sidebar .sidebar-logo {
+     font-size: 1.4em;
+     margin-bottom: 25px;
+ }
+
+ .sidebar ul {
+     list-style: none;
+     padding-top: 42px;
+ }
+
+ .sidebar ul li {
+     padding: 20px 18px;
+ }
+
+
+ .sidebar ul li a {
+     text-decoration: none;
+     color: white;
+     font-size: 1em;
+ }
+
+ .close-btn {
+     font-size: 2em;
+     cursor: pointer;
+     position: absolute;
+     top: 19px;
+     right: 22px;
+ }
+
+ /* ===== Responsive ===== */
+ @media (max-width: 768px) {
+     .search-bar {
+         display: none;
+     }
+
+     .menu-icon {
+         display: block;
+     }
+
+
+     .logo {
+         margin-left: 2.9rem;
+     }
+
+     .lower-navbar {
+         display: none;
+     }
+
+     .full-search {
+         display: block;
+     }
+ }
+
+ @media (max-width: 480px) {
+     .logo {
+         display: none;
+     }
+
+     .sidebar .sidebar-logo {
+         display: block;
+     }
+ }
+
+ @media (min-width: 481px) {
+     .sidebar .sidebar-logo {
+         display: none;
+     }
+ }
+
+ /* =====  Navbar ===== */
+
+
+
+
+
+ /* =====  whatsapp chatbox ===== */
+ .chat-btn {
+     position: fixed;
+     bottom: 26px;
+     right: 25px;
+     background-color: #d0e0c8;
+     border: none;
+     border-radius: 50%;
+     width: 30px;
+     height: 30px;
+     font-size: 32px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.555);
+     transition: transform 0.3s, box-shadow 0.3s;
+     z-index: 3;
+ }
+
+ .chat-btn img {
+     width: 38px;
+     height: 38px;
+ }
+
+ .chat-box {
+     position: fixed;
+     bottom: 90px;
+     right: 20px;
+     width: 240px;
+     background: black;
+     color: white;
+     border-radius: 10px;
+     border: 0.5px solid rgba(245, 245, 245, 0.255);
+     display: none;
+     animation: fadeIn 0.3s ease-in-out;
+     z-index: 2;
+ }
+
+ .chat-header {
+     background-color: rgb(41, 35, 35);
+     color: white;
+     padding: 10px;
+     font-size: 16px;
+     border-top-left-radius: 10px;
+     border-top-right-radius: 10px;
+     border-bottom: 1px solid #e4002b;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ #close-btn {
+     cursor: pointer;
+     font-size: 22px;
+ }
+
+ .chat-body {
+     padding: 14px;
+     font-size: 12px;
+     color: #ffffff;
+     background-color: black;
+     line-height: 1.5;
+ }
+
+ .whatsapp-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 10px;
+     border-top: 1px solid #e4002b;
+     background: rgb(41, 35, 35);
+     color: white;
+     text-decoration: none;
+     font-weight: bold;
+     border-bottom-left-radius: 10px;
+     border-bottom-right-radius: 10px;
+ }
+
+ .whatsapp-link img {
+     width: 25px;
+     height: 25px;
+     margin-right: 8px;
+ }
+
+ .chat-box {
+     display: none;
+ }
+
+ .chat-box.visible {
+     display: block;
+ }
+
+ @keyframes fadeIn {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ /* =====  whatsapp chatbox ===== */
+
+
+
+ .preloader {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: #000000;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+     transition: opacity 1s ease, transform 1s ease;
+ }
+
+ .spinner {
+     width: 70px;
+     height: 70px;
+     border-top: 5px solid #e4002b;
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+     transition: transform 6s ease;
+ }
+
+ @keyframes spin {
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+
+
+
+
+
+ 
