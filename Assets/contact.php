@@ -245,7 +245,7 @@
   </section>
   <section class="map-section">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19821.29571305814!2d-0.1267960341542797!3d51.507321524287616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604cca6f429b5%3A0x9eebb1f3342e1b64!2slastminute.com%20London%20Eye!5e0!3m2!1sen!2sus!4v1717171717171"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.418827199228!2d67.06539777519375!3d24.85101574541826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e81b8000001%3A0x3a0189645873f92!2sKashmir%20Park%20(Askari%20Amusement%20Park)!5e0!3m2!1sen!2s!4v1717326539244!5m2!1sen!2s"
       allowfullscreen=""
       loading="lazy">
     </iframe>
