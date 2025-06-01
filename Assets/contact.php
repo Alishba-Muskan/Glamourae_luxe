@@ -179,7 +179,20 @@
   </div>
 
   <nav id="shownavbar"></nav>
-  <img src="./images/CONTACT US.jpg" alt="About Us Image" style="width: 100%; height: 60vh; display: block;">
+
+<section class="hero" style="--hero-bg: url('https://images.pexels.com/photos/3787299/pexels-photo-3787299.jpeg');">
+  <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p>
+      We'd love to hear from you! <br>
+      Whether you have questions, feedback, or collaboration ideas — reach out and let's connect. <br>
+      Email us at <strong>hello@example.com</strong> or follow us on social media to stay updated.
+    </p>
+  </div>
+</section>
+
+
+
 
   <section class="contact-section">
     <div class="contact-container">

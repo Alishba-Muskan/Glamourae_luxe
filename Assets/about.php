@@ -241,6 +241,18 @@
 
     <nav id="shownavbar"></nav>
 
+<section class="hero" style="--hero-bg: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1920&q=80');">
+  <div class="hero-content">
+    <h1>About Us</h1>
+    <p>
+      We’re a team of thinkers, writers, and creators passionate about exploring ideas that matter. <br>
+      Our mission is to provide thoughtful, well-crafted content that inspires, informs, and ignites conversation. <br>
+      Whether it's personal growth, culture, or creativity — we're here to share perspectives that resonate.
+    </p>
+  </div>
+</section>
+
+
 
     <div class="container">
         <div class="about-intro">

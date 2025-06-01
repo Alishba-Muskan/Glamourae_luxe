@@ -37,7 +37,7 @@
     h2 {
       text-align: center;
       font-size: 2.8rem;
-      margin-bottom: 10px;
+      margin-bottom: 28px;
       color: var(--red);
     }
 
@@ -49,7 +49,6 @@
       font-size: 1.1rem;
     }
 
-    /* Blog Main Grid */
     .blog-grid {
       display: flex;
       flex-wrap: wrap;
@@ -230,51 +229,6 @@
         flex-direction: row;
       }
     }
-
-
-    .hero {
-      position: relative;
-      height: 70vh;
-      background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      width: 100%;
-      margin-bottom: 5%;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.56);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #cccccc;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 830px;
-    }
   </style>
 </head>
 
@@ -287,14 +241,14 @@
   <nav id="shownavbar"></nav>
 
 
-   <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to the Blog</h1>
-        <p>
-          Where thoughts are crafted with clarity, and every word carries depth. This is more than just a blog — it's a space for reflection, ideas, and meaningful conversations.<br> Whether you're here to explore new perspectives, question the ordinary, or simply enjoy thoughtful writing — you're in the right place.
-        </p>
-      </div>
-    </section>
+  <section class="hero" style="--hero-bg: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80');">
+    <div class="hero-content">
+      <h1>Welcome to the Blog</h1>
+      <p>
+        Where thoughts are crafted with clarity, and every word carries depth. This is more than just a blog — it's a space for reflection, ideas, and meaningful conversations.<br> Whether you're here to explore new perspectives, question the ordinary, or simply enjoy thoughtful writing — you're in the right place.
+      </p>
+    </div>
+  </section>
 
   <div class="container">
     <h2>Our Insightful <span>Blog</span></h2>
