@@ -241,7 +241,6 @@
 
     <nav id="shownavbar"></nav>
 
-    <img src="./images/about us.jpg" alt="About Us Image" style="width: 100%; height: 60vh; display: block;">
 
     <div class="container">
         <div class="about-intro">

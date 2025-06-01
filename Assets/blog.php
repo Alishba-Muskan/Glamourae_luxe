@@ -31,7 +31,7 @@
       max-width: 100%;
       margin: auto;
       padding: 60px 80px;
-
+      margin-top: -6%;
     }
 
     h2 {
@@ -234,7 +234,7 @@
 
     .hero {
       position: relative;
-      height: 50vh;
+      height: 70vh;
       background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -258,7 +258,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 1000px;
+      max-width: 1200px;
       padding: 20px;
     }
 
@@ -273,7 +273,7 @@
       color: #cccccc;
       line-height: 1.6;
       margin: 0 auto;
-      max-width: 700px;
+      max-width: 830px;
     }
   </style>
 </head>
@@ -285,6 +285,16 @@
   </div>
 
   <nav id="shownavbar"></nav>
+
+
+   <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to the Blog</h1>
+        <p>
+          Where thoughts are crafted with clarity, and every word carries depth. This is more than just a blog — it's a space for reflection, ideas, and meaningful conversations.<br> Whether you're here to explore new perspectives, question the ordinary, or simply enjoy thoughtful writing — you're in the right place.
+        </p>
+      </div>
+    </section>
 
   <div class="container">
     <h2>Our Insightful <span>Blog</span></h2>
@@ -329,18 +339,6 @@
         </div>
       </div>
     </div>
-
-
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to the Blog</h1>
-        <p>
-          Where thoughts are crafted with clarity, and every word carries depth. This is more than just a blog — it's a space for reflection, ideas, and meaningful conversations. Whether you're here to explore new perspectives, question the ordinary, or simply enjoy thoughtful writing — you're in the right place.
-        </p>
-      </div>
-    </section>
-
-
 
 
 
