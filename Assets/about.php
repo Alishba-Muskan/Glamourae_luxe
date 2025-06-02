@@ -245,7 +245,7 @@
   <div class="hero-content">
     <h1>About Us</h1>
     <p>
-      We’re a team of thinkers, writers, and creators passionate about exploring ideas that matter. <br>
+      We’re a team of thinkers, writers, and creators passionate about exploring ideas that matter.
       Our mission is to provide thoughtful, well-crafted content that inspires, informs, and ignites conversation. <br>
       Whether it's personal growth, culture, or creativity — we're here to share perspectives that resonate.
     </p>
