@@ -7,12 +7,10 @@
  body {
      font-family: 'Segoe UI', sans-serif;
      background: black;
-     color: white;
  }
+ 
 
-
-
-
+ 
  .hero {
      position: relative;
      height: 70vh;
@@ -34,7 +32,7 @@
      left: 0;
      right: 0;
      bottom: 0;
-     background-color: rgba(0, 0, 0, 0.721);
+     background-color: rgba(0, 0, 0, 0.285);
      z-index: 1;
  }
 
@@ -48,7 +46,7 @@
  .hero h1 {
      font-size: 3rem;
      margin-bottom: 15px;
-     color: #ffffff;
+     color: #ffd700;  
  }
 
  .hero p {
@@ -163,12 +161,12 @@
      background-color: rgb(41, 35, 35);
      display: flex;
      justify-content: center;
-     padding: 6px 0px;
+     padding: 4px 50px;
  }
 
  .nav-links {
      display: flex;
-     gap: 28px;
+     gap: 48px;
      list-style: none;
      color: white;
  }
@@ -186,27 +184,7 @@
  }
 
 
- .dropdown-menu {
-     display: none;
-     position: absolute;
-     top: 35px;
-     background: #555;
-     min-width: 160px;
-     border-radius: 4px;
-     z-index: 999;
- }
-
- .dropdown-menu li a {
-     padding: 10px;
-     color: white;
-     white-space: nowrap;
- }
-
- .dropdown:hover .dropdown-menu {
-     display: block;
- }
-
- /* ===== Sidebar ===== */
+  /* ===== Sidebar ===== */
  .sidebar {
      display: none;
      position: fixed;
@@ -292,6 +270,9 @@
  /* =====  Navbar ===== */
 
 
+
+
+ 
 
 
 
@@ -432,3 +413,76 @@
          transform: rotate(360deg);
      }
  }
+
+
+
+  .hp-services {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2c2c2c;
+    margin-bottom: 5%;
+}
+
+.hp-services h1 {
+    color: #d0e0c8;
+    font-size: 34px;
+    font-family: 'Cursive', sans-serif;
+}
+
+.hp-services .hp-description {
+    font-size: 18px;
+    color: #d0e0c8d5;
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.6;
+}
+
+.hp-services .hp-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.hp-services .hp-feature {
+    display: flex;
+    width: 250px;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
+
+.hp-services .hp-feature i {
+    font-size: 30px;
+    color: #d0e0c8;
+}
+
+.hp-services .hp-feature-text {
+    color: #d0e0c8;
+    font-size: 14px;
+}
+
+.hp-services .hp-feature-text h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hp-services .hp-divider {
+    width: 2px;
+    background-color: #d0e0c8;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .hp-services .hp-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hp-services .hp-divider {
+        display: none;
+    }
+}
+
+
