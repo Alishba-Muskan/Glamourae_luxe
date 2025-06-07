@@ -26,21 +26,6 @@ include("header.php");
 
 
 
-<section class="hp-hero">
-    <div class="hp-hero-text">
-        <h1>Jenny's Beauty Boutique</h1>
-        <p>Cosmetics & Imitation Jewelry – Curated with Love.<br>
-            Style. Shine. Self-care – delivered to your doorstep.</p>
-        <div class="hp-hero-buttons">
-            <a href="#shop">Shop Now</a>
-            <a href="#collections">Explore Collections</a>
-            <a href="#contact">Contact Us</a>
-        </div>
-    </div>
-    <div class="hp-hero-image">
-        <img src="https://cdn.pixabay.com/photo/2017/06/23/09/18/makeup-2439500_1280.jpg" alt="Beauty Products and Jewelry">
-    </div>
-</section>
 
 
 
@@ -110,7 +95,7 @@ include("header.php");
 
 
  <div class="banner">
-    <img src="./Images/hp-banner1.jpg" alt="Cosmetics and Jewelry" />
+    <img src="" alt="Cosmetics and Jewelry" />
   </div>
 
 
