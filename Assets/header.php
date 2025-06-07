@@ -5,8 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> <?php echo $title; ?> </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./style.css?v=<?php echo time(); ?>">
+
 </head>
 
 
@@ -24,7 +26,7 @@
                     <input type="text" placeholder="Search..." />
                 </div>
             </div>
-            <div class="logo">LOGO</div>
+            <div class="logo"><img src="./Images/gl logo-01-01.png" alt=""></div>
             <div class="upper-right">
                 <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                 <div class="icon"><i class="fas fa-user-plus"></i></div>
@@ -41,6 +43,7 @@
                 <li><a href="./index.php">Home</a></li>
                 <li><a href="./blog.php">Cosmetics</a></li>
                 <li><a href="./contact.php">Jewellery</a></li>
+                <li><a href="./compare&choose.php">Compare & Choose</a></li>
                 <li><a href="./blog.php">Blog</a></li>
                 <li><a href="./about.php">About</a></li>
                 <li><a href="./contact.php">Contact</a></li>
