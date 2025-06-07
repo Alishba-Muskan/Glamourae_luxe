@@ -94,9 +94,9 @@ include("header.php");
 
 
 
- <div class="banner">
+ <!-- <div class="banner">
     <img src="" alt="Cosmetics and Jewelry" />
-  </div>
+  </div> -->
 
 
 
