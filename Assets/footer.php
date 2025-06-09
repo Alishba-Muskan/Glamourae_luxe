@@ -1,8 +1,8 @@
 <footer class="footer">
   <div class="footer-content">
 
-    <div class="footer-section about">
-      <h2>Jenny's Beauty Collection</h2>
+    <div class="footer-section about" style="margin-right: 3%; margin-top:-4%;">
+      <img src="./Images/gl logo-01-01.png" width="200px" class="mb-3 mt-2"  alt="">
       <p class="tagline">Bringing Beauty to Your Doorstep</p>
 
       <h4>About Us</h4>
@@ -74,6 +74,9 @@ setTimeout( function(){
   }
 }, 6000);
 
+
     </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

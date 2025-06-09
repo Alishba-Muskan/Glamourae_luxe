@@ -1,48 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Compare Products by Category (No same product in both)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background:rgb(0, 0, 0);
-      color: white;
-    }
-    h1 {
-      text-align: center;
-      color: #e91e63;
-    }
-    select {
-      padding: 8px;
-      margin: 10px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 30px;
-      background: black;
-      color: white;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: center;
-    }
-    th {
-      background: #e91e63;
-      color: white;
-    }
-    img {
-      max-width: 100px;
-      height: auto;
-    }
-  </style>
-</head>
-<body>
+<?php
+$title = "Cosmetics Page";
+include("header.php");
+?>
 
-<h1>Compare Products by Category</h1>
+
+<section class="hero" style="--hero-bg: url('./Images/cosmetics\ banner.jpg');">
+  <!-- <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p>
+      We'd love to hear from you! <br>
+      Whether you're looking for trending cosmetics or stunning imitation jewelry — Jenny’s Glam Hub is here to help. <br>
+      Email us at <strong>glamhub@example.com</strong> or connect with us on social media.
+    </p>
+  </div> -->
+</section>
+
+
+<h1 class="compare-h1">Compare Products by Category</h1>
 
 <div style="text-align:center;">
   <label>Select Category:
@@ -99,19 +73,15 @@
     const product1 = document.getElementById('product1');
     const product2 = document.getElementById('product2');
 
-    // Filter products by selected category
     const filtered = products.filter(p => p.category === category);
 
-    // Clear both dropdowns and add default option
     product1.innerHTML = '<option value="">-- Select Product --</option>';
     product2.innerHTML = '<option value="">-- Select Product --</option>';
 
-    // Fill product1 dropdown
     filtered.forEach(p => {
       product1.add(new Option(`${p.name} (${p.brand})`, p.id));
     });
 
-    // Clear comparison table
     clearComparison();
   }
 
@@ -122,20 +92,16 @@
 
     const selected1 = product1.value;
 
-    // Filter products by selected category
     const filtered = products.filter(p => p.category === category);
 
-    // Clear product2 dropdown and add default option
     product2.innerHTML = '<option value="">-- Select Product --</option>';
 
-    // Add all except product1 selected product
     filtered.forEach(p => {
       if (String(p.id) !== selected1) {
         product2.add(new Option(`${p.name} (${p.brand})`, p.id));
       }
     });
 
-    // Clear product2 selection and comparison on product1 change
     product2.value = "";
     clearComparison();
   }
@@ -166,26 +132,25 @@
 
     const p1 = products.find(p => p.id == id1);
     const p2 = products.find(p => p.id == id2);
-
     document.getElementById("name1").innerText = `${p1.name} (${p1.brand})`;
     document.getElementById("name2").innerText = `${p2.name} (${p2.brand})`;
-
-    document.getElementById("img1").innerHTML = `<img src="${p1.image}" alt="${p1.name}" />`;
-    document.getElementById("img2").innerHTML = `<img src="${p2.image}" alt="${p2.name}" />`;
-
+    document.getElementById("img1").innerHTML = `<img class='compare-img' src="${p1.image}" alt="${p1.name}" />`;
+    document.getElementById("img2").innerHTML = `<img class='compare-img' src="${p2.image}" alt="${p2.name}" />`;
     document.getElementById("category1").innerText = p1.category;
     document.getElementById("category2").innerText = p2.category;
-
     document.getElementById("price1").innerText = `₹${p1.price}`;
     document.getElementById("price2").innerText = `₹${p2.price}`;
-
     document.getElementById("brand1").innerText = p1.brand;
     document.getElementById("brand2").innerText = p2.brand;
-
     document.getElementById("desc1").innerText = p1.description;
     document.getElementById("desc2").innerText = p2.description;
   }
 </script>
 
-</body>
-</html>
+
+
+
+<?php
+include("footer.php");
+?>
+

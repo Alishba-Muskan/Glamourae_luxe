@@ -7,6 +7,7 @@
     <title> <?php echo $title; ?> </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./style.css?v=<?php echo time(); ?>">
 
 </head>
@@ -41,8 +42,8 @@
         <div class="lower-navbar">
             <ul class="nav-links">
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="./blog.php">Cosmetics</a></li>
-                <li><a href="./contact.php">Jewellery</a></li>
+                <li><a href="./cosmetics.php">Cosmetics</a></li>
+                <li><a href="./jewellery.php">Jewellery</a></li>
                 <li><a href="./compare&choose.php">Compare & Choose</a></li>
                 <li><a href="./blog.php">Blog</a></li>
                 <li><a href="./about.php">About</a></li>

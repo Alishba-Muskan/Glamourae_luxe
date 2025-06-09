@@ -26,7 +26,16 @@ include("header.php");
 
 
 
-
+<section class="hp-hero" style="--hero-bg: url('./images/banner.jpg');">
+  <!-- <div class="hero-content">
+    <h1>Contact Us</h1>
+    <p>
+      We'd love to hear from you! <br>
+      Whether you're looking for trending cosmetics or stunning imitation jewelry — Jenny’s Glam Hub is here to help. <br>
+      Email us at <strong>glamhub@example.com</strong> or connect with us on social media.
+    </p>
+  </div> -->
+</section>
 
 
 <section class="hp-services">
@@ -101,25 +110,29 @@ include("header.php");
 
 
 <div class="hp-container-boutique">
-    <div class="hp-text-section-boutique">
-        <h2>YOUR STYLE OUR PASSION</h2>
-        <p>
-            At Jenny's Boutique, we believe every customer deserves beautifully curated cosmetics and imitation jewelry.
-            From elegant earrings to daily skincare essentials, our collection is designed to add charm and confidence
-            to your every day. With quality products and personalized service, we aim to make every experience memorable.
-        </p>
+  <div class="hp-text-section-boutique">
+    <h2>YOUR STYLE OUR PASSION</h2>
+    <p>
+      At Jenny's Boutique, we believe every customer deserves beautifully curated cosmetics and imitation jewelry.
+      From elegant earrings to daily skincare essentials, our collection is designed to add charm and confidence
+      to your every day. With quality products and personalized service, we aim to make every experience memorable.
+    </p>
+  </div>
+
+  <div class="hp-gallery-section">
+    <div class="hp-large-image">
+      <img src="./Images/hp best product6.jpg" alt="Jewelry Stack" />
     </div>
-    <div class="hp-gallery-section">
-        <div class="hp-image-card hp-arch-image">
-            <img src="./Images/hp best product6.jpg" alt="Jewelry Stack">
-        </div>
-        <div class="hp-image-card hp-round-image">
-            <img src="./Images/hp best product7.jpg" alt="Cosmetic Product">
-        </div>
-        <div class="hp-image-card hp-square-image">
-            <img src="./Images/hp best product8.jpg" alt="Jewelry and Makeup">
-        </div>
+
+    <div class="hp-small-image-stack">
+      <div class="hp-small-image">
+        <img src="./Images/hp best product7.jpg" alt="Cosmetic Product" />
+      </div>
+      <div class="hp-small-image">
+        <img src="./Images/hp best product8.jpg" alt="Jewelry and Makeup" />
+      </div>
     </div>
+  </div>
 </div>
 
 
