@@ -6,28 +6,28 @@ include("header.php");
 $blogPosts = [
   [
     "id" => 1,
-    'title' => 'Complete Skincare Routine for Healthy Skin',
+    'title' => 'Complete Skincare Routine for Healthy Skin BEAUTY TIPS',
     'description' => 'From cleansing to moisturizing, learn the essential steps to keep your skin healthy all year round.',
     'image' => './Images/blog1.webp',
     'type' => 'main'
   ],
   [
     "id" => 2,
-    'title' => 'How to Care for Your Gold Jewelry',
+    'title' => 'How to Care for Your Gold Jewelry STYLING TIPS',
     'link' => '#',
     'image' => './Images/blog2.jfif',
     'type' => 'side'
   ],
   [
     "id" => 3,
-    'title' => 'Benefits of Using Sunscreen Daily',
+    'title' => 'Benefits of Using Sunscreen Daily BEAUTY TIPS',
     'link' => '#',
     'image' => './Images/blog3.jfif',
     'type' => 'side'
   ],
   [
     "id" => 4,
-    'title' => 'Nighttime Skincare Routine for Glowing Skin',
+    'title' => 'Nighttime Skincare Routine for Glowing Skin BEAUTY TIPS',
     'link' => '#',
     'image' => './Images/blog4.jfif',
     'type' => 'side',
@@ -35,7 +35,7 @@ $blogPosts = [
   ],
   [
     "id" => 5,
-    'title' => 'Tips to Choose the Perfect Statement Necklace',
+    'title' => 'Tips to Choose the Perfect Statement Necklace STYLING TIPS',
     'link' => '#',
     'image' => './images/blog5.jfif',
     'type' => 'side'
@@ -46,7 +46,7 @@ $blogPosts = [
 $latestProducts = [
   [
     "id" => 6,
-    'title' => 'Velvet Matte Lipstick Essentials',
+    'title' => 'Velvet Matte Lipstick Essentials BEAUTY TIPS',
     'category' => 'Cosmetics',
     'description' => 'Experience rich colors and long-lasting matte finish with our velvet matte lipstick collection.',
     'image' => './Images/blog6.jfif',
@@ -54,7 +54,7 @@ $latestProducts = [
   ],
   [
     "id" => 7,
-    'title' => 'Classic Gold Hoop Earrings Care Tips',
+    'title' => 'Classic Gold Hoop Earrings Care  STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Learn how to maintain the shine and elegance of your gold hoop earrings with simple care tips.',
     'image' => './Images/blog7.jfif',
@@ -62,7 +62,7 @@ $latestProducts = [
   ],
   [
     "id" => 8,
-    'title' => 'Hydrating Face Serum for All Skin Types',
+    'title' => 'Hydrating Face Serum for All Skin Types BEAUTY TIPS',
     'category' => 'Skincare',
     'description' => 'Boost your skin’s glow and moisture with our nutrient-rich serum suitable for all skin types.',
     'image' => './Images/blog8.jfif',
@@ -70,7 +70,7 @@ $latestProducts = [
   ],
   [
     "id" => 9,
-    'title' => 'Minimalist Silver Bracelet: Styling Tips',
+    'title' => 'Minimalist Silver Bracelet: STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Delicate and versatile, discover how to style your silver bracelet for any occasion.',
     'image' => './Images/blog9.jfif',
@@ -78,7 +78,7 @@ $latestProducts = [
   ],
   [
     "id" => 10,
-    'title' => 'Night Cream Benefits for Skin Repair',
+    'title' => 'Night Cream Benefits for Skin Repair BEAUTY TIPS',
     'category' => 'Skincare',
     'description' => 'Repair and rejuvenate your skin overnight with our nourishing night cream formula.',
     'image' => './Images/blog10.jfif',
@@ -86,7 +86,7 @@ $latestProducts = [
   ],
   [
     "id" => 11,
-    'title' => 'Timeless Pearl Drop Earrings',
+    'title' => 'Timeless Pearl Drop Earrings STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Elegant and classic, these pearl drop earrings add a touch of sophistication to your look.',
     'image' => './Images/blog11.jfif',
