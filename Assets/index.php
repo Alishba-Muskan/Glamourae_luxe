@@ -121,15 +121,15 @@ include("header.php");
 
   <div class="hp-gallery-section">
     <div class="hp-large-image">
-      <img src="./Images/hp best product6.jpg" alt="Jewelry Stack" />
+      <img src="./Images/hp best product2.jpg" alt="Jewelry Stack" />
     </div>
 
     <div class="hp-small-image-stack">
       <div class="hp-small-image">
-        <img src="./Images/hp best product7.jpg" alt="Cosmetic Product" />
+        <img src="./Images/hp best product3.jpg" alt="Cosmetic Product" />
       </div>
       <div class="hp-small-image">
-        <img src="./Images/hp best product8.jpg" alt="Jewelry and Makeup" />
+        <img src="./Images/hp best product4.jpg" alt="Jewelry and Makeup" />
       </div>
     </div>
   </div>

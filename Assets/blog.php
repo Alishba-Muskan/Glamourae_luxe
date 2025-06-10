@@ -73,7 +73,7 @@ $latestProducts = [
     'title' => 'Minimalist Silver Bracelet: STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Delicate and versatile, discover how to style your silver bracelet for any occasion.',
-    'image' => './Images/blog9.jfif',
+    'image' => './Images/hp best product8.jpg',
     'link' => '#'
   ],
   [
