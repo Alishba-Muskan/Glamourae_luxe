@@ -4,7 +4,7 @@ include("header.php");
 ?>
 
 
-<section class="hero" style="--hero-bg: url('./Assets/images/compare.jpg');"></section>
+<section class="hero" style="--hero-bg: url('./images/compare.jpg');"></section>
 
 
 

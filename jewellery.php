@@ -68,7 +68,7 @@ $products = [
 ];
 ?>
 
-<section class="hero" style="--hero-bg: url('./Assets/Images/Jewellery\ banner.jpg');"></section>
+<section class="hero" style="--hero-bg: url('./Images/Jewellery\ banner.jpg');"></section>
 
     <div class="container">
       <div class="product-list">

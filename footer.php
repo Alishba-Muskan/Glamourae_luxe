@@ -1,8 +1,7 @@
 <footer class="footer">
   <div class="footer-content">
 
-    <div class="footer-section about" style="margin-right: 3%; margin-top:-4%;">
-      <img src="./Assets/Images/gl logo-01-01.png" width="200px" class="mb-3 mt-2"  alt="">
+    <div class="footer-section about" style="margin-right: 3%; margin-top: -8px;">
       <p class="tagline">Bringing Beauty to Your Doorstep</p>
 
       <h4>About Us</h4>
@@ -40,7 +39,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>2025 © Jenny’s Beauty Collection. All Rights Reserved.</p>
+    <p>2025 © Jenny’s Glamouraé Luxe. All Rights Reserved.</p>
   </div>
 </footer>
 
