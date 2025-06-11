@@ -76,21 +76,21 @@ include("header.php");
     <h2>Our Services / <strong>How It Works</strong></h2>
     <div class="about-services-grid">
         <div class="about-service-card">
-            <img src="./Images/browse and add to car.jfif" alt="Browse and Shop">
+            <img src="./Assets/Images/browse and add to car.jfif" alt="Browse and Shop">
             <div class="about-service-content">
                 <h3>Step One: Browse & Add to Basket</h3>
                 <p>Users can browse categories and products, specify quantities, and add items to the shopping basket with ease.</p>
             </div>
         </div>
         <div class="about-service-card">
-            <img src="./Images/place your order.jfif" alt="Place Order">
+            <img src="./Assets/Images/place your order.jfif" alt="Place Order">
             <div class="about-service-content">
                 <h3>Step Two: Place Your Order</h3>
                 <p>While ordering, users provide full contact info, DOB, and additional remarks—helping us personalize your experience.</p>
             </div>
         </div>
         <div class="about-service-card">
-            <img src="./Images/admin panel.jfif" alt="Admin Control">
+            <img src="./Assets/Images/admin panel.jfif" alt="Admin Control">
             <div class="about-service-content">
                 <h3>Step Three: Admin Control Panel</h3>
                 <p>The admin manages product entries, backups, reports, and top 10 product/client stats—all from a central dashboard.</p>

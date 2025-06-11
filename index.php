@@ -26,7 +26,7 @@ include("header.php");
 
 
 
-<section class="hp-hero" style="--hero-bg: url('./images/banner.jpg');">
+<section class="hp-hero" style="--hero-bg: url('./Assets/images/banner.jpg');">
   <!-- <div class="hero-content">
     <h1>Contact Us</h1>
     <p>
@@ -83,19 +83,19 @@ include("header.php");
     <h2>OUR BEST SELLERS</h2>
     <div class="hp-products">
         <div class="hp-creation-box">
-            <a href="#"><img src="./Images/hp best product2.jpg" alt="New Cosmetics"></a>
+            <a href="#"><img src="./Assets/Images/hp best product2.jpg" alt="New Cosmetics"></a>
             <p>BRACELET BEST SELLERS</p>
         </div>
         <div class="hp-creation-box">
-            <a href="#"><img src="./Images/hp best product5.jpg" alt="Best Jewelry Sellers"></a>
+            <a href="#"><img src="./Assets/Images/hp best product5.jpg" alt="Best Jewelry Sellers"></a>
             <p>NEW COSMETICS</p>
         </div>
         <div class="hp-creation-box">
-            <a href="#"><img src="./Images/hp best product3.jpg" alt="Seasonal Offers"></a>
+            <a href="#"><img src="./Assets/Images/hp best product3.jpg" alt="Seasonal Offers"></a>
             <p>NECKLACE BEST SELLERS</p>
         </div>
         <div class="hp-creation-box">
-            <a href="#"><img src="./Images/hp best product4.jpg" alt="Discount Deals"></a>
+            <a href="#"><img src="./Assets/Images/hp best product4.jpg" alt="Discount Deals"></a>
             <p>EARINGS BEST SELLERS</p>
         </div>
     </div>
@@ -121,15 +121,15 @@ include("header.php");
 
   <div class="hp-gallery-section">
     <div class="hp-large-image">
-      <img src="./Images/hp best product2.jpg" alt="Jewelry Stack" />
+      <img src="./Assets/Images/hp best product2.jpg" alt="Jewelry Stack" />
     </div>
 
     <div class="hp-small-image-stack">
       <div class="hp-small-image">
-        <img src="./Images/hp best product3.jpg" alt="Cosmetic Product" />
+        <img src="./Assets/Images/hp best product3.jpg" alt="Cosmetic Product" />
       </div>
       <div class="hp-small-image">
-        <img src="./Images/hp best product4.jpg" alt="Jewelry and Makeup" />
+        <img src="./Assets/Images/hp best product4.jpg" alt="Jewelry and Makeup" />
       </div>
     </div>
   </div>

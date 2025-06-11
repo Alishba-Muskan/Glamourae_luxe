@@ -3,7 +3,7 @@ $title = "Contact Page";
 include("header.php");
 ?>
 
-<section class="hero" style="--hero-bg: url('./Images/CONTACT\ US.jpg');">
+<section class="hero" style="--hero-bg: url('./Assets/Images/CONTACT\ US.jpg');">
   <div class="hero-content">
     <h1>Contact Us</h1>
     <p>

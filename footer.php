@@ -2,7 +2,7 @@
   <div class="footer-content">
 
     <div class="footer-section about" style="margin-right: 3%; margin-top:-4%;">
-      <img src="./Images/gl logo-01-01.png" width="200px" class="mb-3 mt-2"  alt="">
+      <img src="./Assets/Images/gl logo-01-01.png" width="200px" class="mb-3 mt-2"  alt="">
       <p class="tagline">Bringing Beauty to Your Doorstep</p>
 
       <h4>About Us</h4>
@@ -46,7 +46,7 @@
 
 
 
-<script src="./main.js"></script>
+<script src="./Assets/main.js"></script>
  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

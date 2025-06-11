@@ -8,28 +8,28 @@ $blogPosts = [
     "id" => 1,
     'title' => 'Complete Skincare Routine for Healthy Skin BEAUTY TIPS',
     'description' => 'From cleansing to moisturizing, learn the essential steps to keep your skin healthy all year round.',
-    'image' => './Images/blog1.webp',
+    'image' => './Assets/Images/blog1.webp',
     'type' => 'main'
   ],
   [
     "id" => 2,
     'title' => 'How to Care for Your Gold Jewelry STYLING TIPS',
     'link' => '#',
-    'image' => './Images/blog2.jfif',
+    'image' => './Assets/Images/blog2.jfif',
     'type' => 'side'
   ],
   [
     "id" => 3,
     'title' => 'Benefits of Using Sunscreen Daily BEAUTY TIPS',
     'link' => '#',
-    'image' => './Images/blog3.jfif',
+    'image' => './Assets/Images/blog3.jfif',
     'type' => 'side'
   ],
   [
     "id" => 4,
     'title' => 'Nighttime Skincare Routine for Glowing Skin BEAUTY TIPS',
     'link' => '#',
-    'image' => './Images/blog4.jfif',
+    'image' => './Assets/Images/blog4.jfif',
     'type' => 'side',
     'cta' => 'Explore Collection →'
   ],
@@ -37,7 +37,7 @@ $blogPosts = [
     "id" => 5,
     'title' => 'Tips to Choose the Perfect Statement Necklace STYLING TIPS',
     'link' => '#',
-    'image' => './images/blog5.jfif',
+    'image' => './Assets/images/blog5.jfif',
     'type' => 'side'
   ]
 ];
@@ -49,7 +49,7 @@ $latestProducts = [
     'title' => 'Velvet Matte Lipstick Essentials BEAUTY TIPS',
     'category' => 'Cosmetics',
     'description' => 'Experience rich colors and long-lasting matte finish with our velvet matte lipstick collection.',
-    'image' => './Images/blog6.jfif',
+    'image' => './Assets/Images/blog6.jfif',
     'link' => '#'
   ],
   [
@@ -57,7 +57,7 @@ $latestProducts = [
     'title' => 'Classic Gold Hoop Earrings Care  STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Learn how to maintain the shine and elegance of your gold hoop earrings with simple care tips.',
-    'image' => './Images/blog7.jfif',
+    'image' => './Assets/Images/blog7.jfif',
     'link' => '#'
   ],
   [
@@ -65,7 +65,7 @@ $latestProducts = [
     'title' => 'Hydrating Face Serum for All Skin Types BEAUTY TIPS',
     'category' => 'Skincare',
     'description' => 'Boost your skin’s glow and moisture with our nutrient-rich serum suitable for all skin types.',
-    'image' => './Images/blog8.jfif',
+    'image' => './Assets/Images/blog8.jfif',
     'link' => '#'
   ],
   [
@@ -73,7 +73,7 @@ $latestProducts = [
     'title' => 'Minimalist Silver Bracelet: STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Delicate and versatile, discover how to style your silver bracelet for any occasion.',
-    'image' => './Images/hp best product8.jpg',
+    'image' => './Assets/Images/hp best product8.jpg',
     'link' => '#'
   ],
   [
@@ -81,7 +81,7 @@ $latestProducts = [
     'title' => 'Night Cream Benefits for Skin Repair BEAUTY TIPS',
     'category' => 'Skincare',
     'description' => 'Repair and rejuvenate your skin overnight with our nourishing night cream formula.',
-    'image' => './Images/blog10.jfif',
+    'image' => './Assets/Images/blog10.jfif',
     'link' => '#'
   ],
   [
@@ -89,7 +89,7 @@ $latestProducts = [
     'title' => 'Timeless Pearl Drop Earrings STYLING TIPS',
     'category' => 'Jewelry',
     'description' => 'Elegant and classic, these pearl drop earrings add a touch of sophistication to your look.',
-    'image' => './Images/blog11.jfif',
+    'image' => './Assets/Images/blog11.jfif',
     'link' => '#'
   ]
 ];
@@ -150,7 +150,6 @@ $latestProducts = [
       echo '<h4>' . $product['title'] . '</h4>';
       echo '<p>' . $product['category'] . '</p>';
       echo '<p>' . $product['description'] . '</p>';
-      // Corrected this line to use $product['id'] instead of $post['id']
       echo '<a href="blog-detail.php?id=' . $product['id'] . '">Read More →</a>';
       echo '</div></div>';
     }
