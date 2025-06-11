@@ -55,7 +55,7 @@
 
     <div class="sidebar" id="sidebar">
         <div class="close-btn" onclick="closeSidebar()">×</div>
-        <div class="sidebar-logo">LOGO</div>
+        <div class="sidebar-logo"><img src="./Images/gl logo-01-01.png" alt=""></div>
         <ul>
             <li><a href="./index.php">Home</a></li>
             <li><a href="./blog.php">Cosmetics</a></li>

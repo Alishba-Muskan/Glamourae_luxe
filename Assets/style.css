@@ -23,7 +23,7 @@
 
  .hero {
    position: relative;
-   height: 70vh;
+   height: 62vh;
    background: var(--hero-bg) no-repeat center center/cover;
    display: flex;
    align-items: center;
@@ -36,7 +36,7 @@
 
  .hp-hero {
    position: relative;
-   height: 70vh;
+   height: 60vh;
    background: var(--hero-bg) no-repeat center center/cover;
    display: flex;
    align-items: center;
@@ -55,7 +55,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   background-color: rgba(0, 0, 0, 0.285);
+   background-color: rgba(0, 0, 0, 0.692);
    z-index: 1;
  }
 
@@ -101,12 +101,12 @@
 
  .logo {
    text-align: center;
-   margin-left: -10rem;
+   margin-left: -14rem;
    flex: 1;
  }
 
  .logo img {
-   width: 16%;
+   width: 125px;
  }
 
  .icon {
@@ -137,7 +137,7 @@
    outline: none;
    color: var(--white);
    padding: 8px 20px;
-   padding-right: 80px;
+   padding-right: 20px;
    z-index: 999;
  }
 
@@ -260,7 +260,16 @@
    right: 22px;
  }
 
- /* ===== Responsive ===== */
+
+ @media (max-width: 898px){
+
+  .logo {
+    text-align: center;
+    margin-left: -8rem;
+    flex: 1;
+  }
+ }
+
  @media (max-width: 768px) {
    .search-bar {
      display: none;
@@ -284,10 +293,17 @@
    }
  }
 
+
+
  @media (max-width: 480px) {
    .logo {
      display: none;
    }
+
+.sidebar-logo img{
+  width: 125px;
+  padding-top: 12px;
+}
 
    .sidebar .sidebar-logo {
      display: block;
@@ -790,7 +806,8 @@
    color: #fff;
    padding: 60px 80px 30px;
    z-index: 1;
-   border: 1px solid var(--golden);
+   border: none;
+   border-top: 1px solid var(--golden);
    margin-top: 5%;
    overflow: hidden;
  }
@@ -802,7 +819,7 @@
    left: 0;
    height: 100%;
    width: 100%;
-   background: rgba(0, 0, 0, 0.738);
+   background: rgba(0, 0, 0, 0.904);
    z-index: -1;
  }
 
@@ -1428,7 +1445,6 @@
    background: var(--grey);
    border-radius: 16px;
    overflow: hidden;
-   box-shadow: 0 4px 12px var(--golden);
    transition: transform 0.3s ease, box-shadow 0.3s ease;
    display: flex;
    flex-direction: column;
