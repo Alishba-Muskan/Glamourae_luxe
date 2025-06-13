@@ -3,27 +3,6 @@ $title = "Home Page";
 include("header.php");
 ?>
 
-<!--  ===== whatsapp chat =====  -->
-<button class="chat-btn" id="chatBtn">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</button>
-
-<div class="chat-box" id="chatBox">
-    <div class="chat-header">
-        <span>Customer Support</span>
-        <span id="close-btn">&times;</span>
-    </div>
-    <div class="chat-body">
-        Welcome to our site, if you need help simply reply to this message, we are online and ready to help.
-        Please feel free to<br><br>
-        Call/WhatsApp: <strong>+923000177325</strong>
-    </div>
-    <a href="https://wa.me/923000177325" class="whatsapp-link" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Chat on WhatsApp
-    </a>
-</div>
-<!--  ===== whatsapp chat =====  -->
-
 
 
 <section class="hp-hero" style="--hero-bg: url('./Images/banner.jpg');"></section>
