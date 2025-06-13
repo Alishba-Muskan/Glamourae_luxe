@@ -221,6 +221,10 @@
  }
 
 
+ .nav-links li a.active{
+  color: var(--golden);
+ }
+
  /* ===== Sidebar ===== */
  .sidebar {
    display: none;
