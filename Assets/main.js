@@ -1,3 +1,5 @@
+
+//---------------------------------------Responsive navbar---------------------------------//
 function openSidebar() {
   document.getElementById("sidebar").style.display = "block";
 }
@@ -9,27 +11,7 @@ function closeSidebar() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const chatBtn = document.getElementById("chatBtn"),
-    chatBox = document.getElementById("chatBox"),
-    closeBtn = document.getElementById("close-btn");
-
-  const toggleChat = () => {
-    const isVisible = chatBox.classList.toggle("visible");
-    chatBtn.style.boxShadow = isVisible ? "0 0 15px #25D366" : "none";
-  };
-
-  setTimeout(toggleChat, 2000);
-  chatBtn?.addEventListener("click", toggleChat);
-  closeBtn?.addEventListener("click", () => {
-    chatBox.classList.remove("visible");
-    chatBtn.style.boxShadow = "none";
-  });
-});
-
-
-
-
+//---------------------------------------Prelaoder ---------------------------------//
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -43,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1000);
   }, 1000);
 });
+
+
+
+
 
 
 
