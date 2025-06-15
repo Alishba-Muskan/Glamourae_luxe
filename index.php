@@ -5,7 +5,7 @@ include("header.php");
 
 
 
-<section class="hp-hero" style="--hero-bg: url('./Images/compare\ 2.jpg');"></section>
+<section class="hp-hero" style="--hero-bg: url('./Images/3.jpeg');"></section>
 
 
 <section class="hp-services">
