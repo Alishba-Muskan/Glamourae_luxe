@@ -9,3 +9,15 @@ CREATE TABLE contact_messages (
     message TEXT NOT NULL,
     submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+
+
+CREATE TABLE Users(
+UserId int PRIMARY KEY AUTO_INCREMENT,
+FirstName varchar(50),
+LastName varchar(50),
+EmailAddress varchar(50),
+UserPassword varchar(50),
+Roles varchar(30) DEFAULT 'User'
+)

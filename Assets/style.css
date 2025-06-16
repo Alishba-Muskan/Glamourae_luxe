@@ -36,7 +36,7 @@
 
  .hp-hero {
    position: relative;
-   height: 78vh;
+   height: 75vh;
    background: var(--hero-bg) no-repeat center center/cover;
    display: flex;
    align-items: center;
