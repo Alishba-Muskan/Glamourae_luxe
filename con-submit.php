@@ -1,6 +1,6 @@
 <?php
 
-include("db.php");
+include("./Admin/conn.php");
 
 $name = $_REQUEST['user-name']; 
 $email = $_REQUEST['user-email']; 

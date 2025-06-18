@@ -13,6 +13,26 @@ CREATE TABLE contact_messages (
 
 
 
+CREATE TABLE AddCos(
+CosId int PRIMARY KEY AUTO_INCREMENT,
+CosTitle varchar(50),
+CosDesc varchar(50),
+CosCategory varchar(50),
+CosPrice int,
+CosImage varchar(50)
+);
+
+
+CREATE TABLE AddJewellery(
+JewelleryId int PRIMARY KEY AUTO_INCREMENT,
+JewelleryTitle varchar(50),
+JewelleryDesc varchar(50),
+JewelleryCategory varchar(50),
+JewelleryPrice int,
+JewelleryImage varchar(50)
+);
+
+
 CREATE TABLE Users(
 UserId int PRIMARY KEY AUTO_INCREMENT,
 FirstName varchar(50),
