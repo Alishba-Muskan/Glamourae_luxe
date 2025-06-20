@@ -1747,10 +1747,10 @@
   }
 
   .checkout-btn-submit {
-    background-color: var(--golden);
-    color: var(--black);
+    background-color: var(--black);
+    border: 1px solid var(--golden);
+    color: var(--golden);
     font-weight: bold;
-    border: none;
     padding: 12px;
     transition: 0.3s;
     width: 100%;
@@ -1759,9 +1759,8 @@
 
   .checkout-btn-submit:hover {
     transition: all 0.3s ease-in;
-    background-color: var(--black);
-    border: 1px solid var(--golden);
-    color: var(--white);
+    background-color: var(--golden);
+    color: var(--black);
   }
 
   .checkout-form p {

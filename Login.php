@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+
 include_once("./Admin/conn.php");
 session_start();
 if (isset($_SESSION['EmailAddress']) && isset($_SESSION['Role']) == 'Admin') {
@@ -7,6 +11,9 @@ if (isset($_SESSION['EmailAddress']) && isset($_SESSION['Role']) == 'Admin') {
 } elseif (isset($_SESSION['EmailAddress']) && isset($_SESSION['Role']) == 'User') {
     header("Location:index.php");
 }
+
+
+
 
 if (isset($_REQUEST['loginNow'])) {
     $EmailAddress = $_REQUEST['EmailAddress'];

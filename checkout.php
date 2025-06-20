@@ -45,45 +45,58 @@ if (isset($_REQUEST['confirmOrder'])) {
 }
 ?>
 
-    <div class="container checkout-container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5 class="checkout-form-title">Your Cart</h5>
-                <div id="showCheckOutProducts"></div>
-            </div>
+<div class="container checkout-container">
+    <div class="row">
+        <div class="col-md-4">
+            <h5 class="checkout-form-title">Your Cart</h5>
+            <div id="showCheckOutProducts"></div>
+        </div>
 
-            <div class="col-md-8">
-                <h5 class="checkout-form-title">Customer Details</h5>
-                <form method="POST" class="checkout-form" id="checkout-orderForm">
-                    <div class="row g-3">
-                        <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Name" required></div>
-                        <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="Address" required></div>
-                        <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="E-mail" required></div>
-                        <div class="col-md-6"><input type="text" name="workPhone" class="form-control" placeholder="Work Phone No."></div>
-                        <div class="col-md-6"><input type="text" name="cellNo" class="form-control" placeholder="Cell No." required></div>
-                        <div class="col-md-6"><input type="date" name="dob" class="form-control"></div>
-                        <div class="col-md-6"><input type="text" name="category" class="form-control" placeholder="Category"></div>
-                        <div class="col-12"><textarea name="remarks" rows="3" class="form-control" placeholder="Remarks (Additional Information)"></textarea></div>
-                        <input type="hidden" name="cart_data" id="cartDataInput">
-                        <p>WE PREFER CASH ON DELIVERY</p>
-                        <div class="col-12"><button type="submit" name="confirmOrder" class="checkout-btn-submit">Confirm Order</button></div>
+        <div class="col-md-8">
+            <h5 class="checkout-form-title">Customer Details</h5>
+            <form action="./checkout.php" method="POST" class="checkout-form needs-validation" id="checkout-orderForm" novalidate>
+                <div class="row g-3">
+                    <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Name" required>
+                        <div class="invalid-feedback">Please Provide a Name</div>
                     </div>
-                </form>
-            </div>
+                    <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="Address" required>
+                        <div class="invalid-feedback">Please Provide a Address</div>
+                    </div>
+                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                        <div class="invalid-feedback">Please Provide a Email</div>
+                    </div>
+                    <div class="col-md-6"><input type="text" name="workPhone" class="form-control" placeholder="Work Phone No." required>
+                        <div class="invalid-feedback">Please Provide a Phone</div>
+                    </div>
+                    <div class="col-md-6"><input type="text" name="cellNo" class="form-control" placeholder="Cell No." required>
+                        <div class="invalid-feedback">Please Provide a Cell No</div>
+                    </div>
+                    <div class="col-md-6"><input type="date" name="dob" class="form-control" required>
+                        <div class="invalid-feedback">Please Provide a DOB</div>
+                    </div>
+                    <div class="col-12"><textarea name="remarks" rows="3" class="form-control" placeholder="Remarks (Additional Information)" required></textarea>
+                        <div class="invalid-feedback">Please Provide a DOB</div>
+                    </div>
+                    <input type="hidden" name="cart_data" id="cartDataInput">
+                    <p>WE PREFER CASH ON DELIVERY</p>
+                    <div class="col-12"><button type="submit" name="confirmOrder" class="checkout-btn-submit">Confirm Order</button></div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
-    <script>
-        const showCheckOutProducts = document.getElementById("showCheckOutProducts");
-        const cartDataInput = document.getElementById("cartDataInput");
-        const localData = localStorage.getItem("cart");
-        const parseData = JSON.parse(localData) || [];
+<script>
+    const showCheckOutProducts = document.getElementById("showCheckOutProducts");
+    const cartDataInput = document.getElementById("cartDataInput");
+    const localData = localStorage.getItem("cart");
+    const parseData = JSON.parse(localData) || [];
 
-        if (parseData.length === 0) {
-            showCheckOutProducts.innerHTML = "<p>No items in cart.</p>";
-        } else {
-            parseData.forEach((item) => {
-                showCheckOutProducts.innerHTML += `
+    if (parseData.length === 0) {
+        showCheckOutProducts.innerHTML = "<p>No items in cart.</p>";
+    } else {
+        parseData.forEach((item) => {
+            showCheckOutProducts.innerHTML += `
           <div class="checkout-products">
             <span><strong>Product:</strong> ${item.title}</span>
             <span><strong>Price:</strong> ₹${item.price}</span>
@@ -91,10 +104,10 @@ if (isset($_REQUEST['confirmOrder'])) {
             <span><strong>Total:</strong> ₹${item.price * item.qunatity}</span>
           </div>
         `;
-            });
-            cartDataInput.value = JSON.stringify(parseData);
-        }
-    </script>
+        });
+        cartDataInput.value = JSON.stringify(parseData);
+    }
+</script>
 </body>
 
 </html>

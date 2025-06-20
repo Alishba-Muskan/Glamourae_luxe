@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(isset($_SESSION['EmailAddress']) == '' && isset($_SESSION['Role']) == ''){
     header("Location:../Login.php");
 }
