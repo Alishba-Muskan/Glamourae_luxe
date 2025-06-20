@@ -57,7 +57,7 @@ $currentpath = basename($_SERVER['REQUEST_URI']);
                 <li><a href="index.php" class="<?php echo $currentpath == 'index.php' ? 'active' : '' ?>">Home</a></li>
                 <li><a href="cosmetics.php" class="<?php echo $currentpath == 'cosmetics.php' ? 'active' : '' ?>">Cosmetics</a></li>
                 <li><a href="jewellery.php" class="<?php echo $currentpath == 'jewellery.php' ? 'active' : '' ?>">Jewellery</a></li>
-                <li><a href="compare&choose.php" class="<?php echo $currentpath == 'compare&choose.php' ? 'active' : '' ?>">Compare & Choose</a></li> <!-- Renamed for safety -->
+                <li><a href="select_category.php" class="<?php echo $currentpath == 'compare&choose.php' ? 'active' : '' ?>">Compare & Choose</a></li> <!-- Renamed for safety -->
                 <li><a href="blog.php" class="<?php echo $currentpath == 'blog.php' ? 'active' : '' ?>">Blog</a></li>
                 <li><a href="about.php" class="<?php echo $currentpath == 'about.php' ? 'active' : '' ?>">About</a></li>
                 <li><a href="contact.php" class="<?php echo $currentpath == 'contact.php' ? 'active' : '' ?>">Contact</a></li>
