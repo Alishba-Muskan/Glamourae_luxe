@@ -1,11 +1,11 @@
- :root {
-   --black: #000000;
-   --white: #ffffff;
-   --red: #e5233e;
-   --golden: #debd01;
-   --grey: rgb(41, 35, 35);
-   --text: #cccccc;
- }
+  :root {
+    --black: #000000;
+    --white: #ffffff;
+    --red: #e5233e;
+    --golden: #debd01;
+    --grey: rgb(41, 35, 35);
+    --text: #cccccc;
+  }
 
 
  * {
@@ -113,6 +113,11 @@
    cursor: pointer;
    color: var(--white);
    font-size: 1.2em;
+ }
+
+
+ .icon:hover{
+  color: var(--golden);
  }
 
  .search-bar {
@@ -1741,3 +1746,163 @@
  }
 
  /* =====   compare & choose  ===== */
+
+
+
+
+
+
+ /* =====  add to cart css  ===== */
+
+
+ 
+    .cart-container {
+        background-color: var(--black);
+        padding: 45px 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .cart-heading {
+        color: var(--red);
+        text-align: center;
+        font-size: 56px;
+        margin-bottom: 8px;
+        margin-top: 18px;
+        text-shadow: 1px 1px 2px var(--text);
+    }
+
+    .cart-table.dataTable {
+        background-color: var(--grey);
+        color: var(--text);
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+
+
+    .cart-table thead th {
+        background-color: var(--black);
+        border: 1px solid var(--golden);
+        color: var(--white);
+        padding: 12px;
+    }
+
+    .cart-table tbody tr:hover {
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .cart-table tbody td {
+        padding: 10px;
+    }
+
+    .cart-table tfoot {
+        background-color: var(--grey);
+    }
+
+    .cart-checkout-btn {
+        background-color: var(--black);
+        color: var(--white);
+        font-weight: bold;
+        border: 1px solid var(--golden);
+        padding: 12px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .cart-checkout-btn:hover {
+        transition: all 0.3s ease-in;
+        background-color: var(--golden);
+        color: var(--black);
+    }
+
+
+
+     /* =====  add to cart css  ===== */
+
+
+
+
+     /* =====  checkout css  ===== */
+
+      .checkout-container {
+            background-color: var(--black);
+            padding: 20px 0px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+            max-width: 1200px;
+        }
+
+        .checkout-products {
+            background-color: #2e2e2e;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .checkout-products span {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .checkout-form-title {
+            color: var(--golden);
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .checkout-form .form-control {
+            background-color: var(--black);
+            color: var(--text);
+            padding: 14px 10px;
+            border: none;
+            border-bottom: 1px solid var(--text);
+        }
+
+
+        .checkout-form .form-control:focus {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid var(--text);
+        }
+
+
+        .checkout-form .form-control::placeholder {
+            color: #999;
+        }
+
+        .checkout-btn-submit {
+            background-color: var(--golden);
+            color: var(--black);
+            font-weight: bold;
+            border: none;
+            padding: 12px;
+            transition: 0.3s;
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        .checkout-btn-submit:hover {
+            transition: all 0.3s ease-in;
+            background-color: var(--black);
+            border: 1px solid var(--golden);
+            color: var(--white);
+        }
+
+        .checkout-form p {
+            color: var(--golden);
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+
+             /* =====  checkout css  ===== */

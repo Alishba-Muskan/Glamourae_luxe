@@ -41,3 +41,34 @@ EmailAddress varchar(50),
 UserPassword varchar(50),
 Roles varchar(30) DEFAULT 'User'
 )
+
+
+
+
+
+
+
+
+
+CREATE TABLE orders (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  address VARCHAR(255),
+  email VARCHAR(100),
+  work_phone VARCHAR(20),
+  cell_no VARCHAR(20),
+  dob DATE,
+  category VARCHAR(100),
+  remarks TEXT,
+  order_date DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE order_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id INT,
+  title VARCHAR(255),
+  price DECIMAL(10,2),
+  quantity INT,
+  total DECIMAL(10,2),
+  FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE
+);

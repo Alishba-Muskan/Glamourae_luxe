@@ -50,6 +50,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
 
 
 
@@ -57,33 +64,38 @@
 <!-- //---------------------------------------Validation Bootstrap---------------------------------// -->
 
 <script>
-  (function () {
-  'use strict';
-  window.addEventListener('load', function () {
-    var forms = document.getElementsByClassName('needs-validation');
-    var validation = Array.prototype.filter.call(forms, function (form) {
-      form.addEventListener('submit', function (event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      var forms = document.getElementsByClassName('needs-validation');
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
 
 
 
-//---------------------------------------Contact Form Alert---------------------------------//
+  //---------------------------------------Contact Form Alert---------------------------------//
 
 
-setTimeout(function () {
-  let flashmsg = document.getElementById("flash-msg");
-  if (flashmsg) {
-    flashmsg.style.display = "none";
-  }
-}, 3000);
+  setTimeout(function() {
+    let flashmsg = document.getElementById("flash-msg");
+    if (flashmsg) {
+      flashmsg.style.display = "none";
+    }
+  }, 3000);
+
+
+  window.addEventListener("load", () => {
+    new DataTable("#example");
+  });
 
 </script>
 

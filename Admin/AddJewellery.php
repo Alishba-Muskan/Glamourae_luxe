@@ -34,6 +34,15 @@ include_once("header.php");
 
                 <input type="submit" class="btn" value="Save Jewellery Card">
             </form>
+             <?php if (isset($_GET['successmsg'])): ?>
+                <div class=" mt-3 alert alert-success" role="alert">
+                    <?php echo $_GET['successmsg']; ?>
+                </div>
+            <?php elseif (isset($_GET['errormsg'])): ?>
+                <div class=" mt-3 alert alert-danger" role="alert">
+                    <?php echo $_GET['errormsg']; ?>
+                </div>
+            <?php endif ?>
         </div>
     </div>
 </div>

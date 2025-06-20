@@ -1,4 +1,10 @@
 <?php
+session_start();
+if(isset($_SESSION['EmailAddress']) == '' && isset($_SESSION['Role']) == ''){
+    header("Location:../Login.php");
+}
+
+
 $title = 'Admin Panel - Home Page';
 include_once("header.php");
 ?>
