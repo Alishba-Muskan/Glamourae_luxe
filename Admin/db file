@@ -1,0 +1,81 @@
+CREATE DATABASE Glamourae_Luxe;
+
+
+CREATE TABLE contact_messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(50) NOT NULL,
+    email VARCHAR(80) NOT NULL,
+    subject VARCHAR(150) NOT NULL,
+    message TEXT NOT NULL,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
+CREATE TABLE AddCos(
+CosId int PRIMARY KEY AUTO_INCREMENT,
+CosTitle varchar(50),
+CosDesc text,
+CosCategory varchar(50),
+CosPrice int,
+CosImage varchar(50)
+);
+
+
+CREATE TABLE AddJewellery(
+JewelleryId int PRIMARY KEY AUTO_INCREMENT,
+JewelleryTitle varchar(50),
+JewelleryDesc varchar(50),
+JewelleryCategory varchar(50),
+JewelleryPrice int,
+JewelleryImage varchar(50)
+);
+
+
+CREATE TABLE Users(
+UserId int PRIMARY KEY AUTO_INCREMENT,
+FirstName varchar(50),
+LastName varchar(50),
+EmailAddress varchar(50),
+UserPassword varchar(50),
+Roles varchar(30) DEFAULT 'User'
+)
+
+
+
+
+
+
+
+CREATE TABLE customers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    address TEXT,
+    email VARCHAR(255),
+    workPhone VARCHAR(50),
+    cellNo VARCHAR(50),
+    dob DATE,
+    category VARCHAR(100),
+    remarks TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT,
+    total_amount DECIMAL(10,2),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES customers(id)
+);
+
+CREATE TABLE order_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    product_name VARCHAR(255),
+    quantity INT,
+    price DECIMAL(10,2),
+    subtotal DECIMAL(10,2),
+    FOREIGN KEY (order_id) REFERENCES orders(id)
+);
+
