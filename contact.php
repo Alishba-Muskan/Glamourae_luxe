@@ -1,10 +1,5 @@
-
-
 <?php
-
 include("./Admin/conn.php");
-
-
 if(isset($_REQUEST['con-submit'])){
   
 $name = $_REQUEST['user-name']; 
@@ -31,12 +26,6 @@ if(mysqli_query($connection, $sql)){
 }
 mysqli_close($connection);
 
-
-
-?>
-
-
-<?php
 $title = "Contact Page";
 include("header.php");
 ?>
@@ -134,6 +123,9 @@ include("header.php");
     allowfullscreen=""
     loading="lazy"></iframe>
 </section>
+
+
+
 
 <?php
 include("footer.php");

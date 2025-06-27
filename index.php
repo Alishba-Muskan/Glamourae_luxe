@@ -1,12 +1,28 @@
 <?php
 $title = "Home Page";
 include("header.php");
+include_once "./Admin/conn.php";
+
+// Fetch products from TopSelling table
+$topSellingQuery = "SELECT * FROM TopSelling ORDER BY TopSellingId DESC LIMIT 10"; 
+$result = mysqli_query($connection, $topSellingQuery);
+$topSellingProducts = [];
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $topSellingProducts[] = [
+        'id' => (int)$row['TopSellingId'],
+        'name' => htmlspecialchars($row['TopSellingTitle']),
+        'description' => htmlspecialchars($row['TopSellingDesc']),
+        'price' => floatval($row['TopSellingPrice']),
+        'category' => strtolower(trim($row['TopSellingCategory'])),
+        'quality' => strtolower(trim($row['TopSellingTier'])),
+        'image' => str_replace('../', '', $row['TopSellingImage']),
+        'quantity' => (int)$row['TopSellingQuantity']
+    ];
+}
 ?>
 
-
-
 <section class="hp-hero" style="--hero-bg: url('./Images/1.jpeg');"></section>
-
 
 <section class="hp-services">
     <h1>Welcome To Jenny's Glamouraé Luxe Store</h1>
@@ -48,35 +64,10 @@ include("header.php");
     </div>
 </section>
 
-
-<div class="hp-creations-container">
-    <h2>OUR BEST SELLERS</h2>
-    <div class="hp-products">
-        <div class="hp-creation-box">
-            <a href="#"><img src="./Assets/Images/hp best product2.jpg" alt="New Cosmetics"></a>
-            <p>BRACELET BEST SELLERS</p>
-        </div>
-        <div class="hp-creation-box">
-            <a href="#"><img src="./Assets/Images/hp best product5.jpg" alt="Best Jewelry Sellers"></a>
-            <p>NEW COSMETICS</p>
-        </div>
-        <div class="hp-creation-box">
-            <a href="#"><img src="./Assets/Images/hp best product3.jpg" alt="Seasonal Offers"></a>
-            <p>NECKLACE BEST SELLERS</p>
-        </div>
-        <div class="hp-creation-box">
-            <a href="#"><img src="./Assets/Images/hp best product4.jpg" alt="Discount Deals"></a>
-            <p>EARINGS BEST SELLERS</p>
-        </div>
-    </div>
-</div>
-
-
-<!-- <section class="hp-hero" style="--hero-bg: url('./Assets/Images/h');"></section> -->
-
- 
-
-
+<section class="top-selling">
+  <h2>Top Selling Products</h2>
+  <div class="products" id="topSellingGrid"></div>
+</section>
 
 <div class="hp-container-boutique">
   <div class="hp-text-section-boutique">
@@ -104,7 +95,58 @@ include("header.php");
   </div>
 </div>
 
+<script>
+  const topSellingProducts = <?= json_encode($topSellingProducts, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
 
-<?php
-include("footer.php");
-?>
+  function createProductCard(p) {
+    const shortDesc = p.description.length > 30 ? p.description.substring(0, 30) + "..." : p.description;
+    const outOfStock = p.quantity === 0;
+
+    return `
+      <div class="product ${outOfStock ? 'product--disabled' : ''}">
+        <div class="product__media">
+          <img src="${p.image}" alt="${p.name}" class="product__image">
+        </div>
+        <div class="product__details">
+          <span class="product__category">${p.category}</span>
+          <h3 class="product__title">${p.name}</h3>
+          <p class="product__description">${shortDesc}</p>
+          <div class="product__footer">
+            <div class="product__price">Rs : ${p.price.toFixed(2)}</div>
+            ${outOfStock
+              ? `<div class="product__stock-status">Out of Stock</div>`
+              : `<div class="product__stock-status in-stock">In Stock</div>`
+            }
+          </div>
+          <p class="productcard_viewdetail"><a href="TopSelling_detail.php?id=${encodeURIComponent(p.id)}">View Details →</a></p>
+        </div>
+      </div>`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('topSellingGrid');
+    renderProducts(topSellingProducts);
+
+    function renderProducts(products) {
+      container.innerHTML = products.length
+        ? products.map(createProductCard).join('')
+        : '<p>No products available.</p>';
+    }
+
+    // Search input support (if present)
+    const searchInput = document.getElementById('searchInput') || document.getElementById('fullsearchinput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.trim().toLowerCase();
+        const filtered = topSellingProducts.filter(p =>
+          p.name.toLowerCase().includes(query) ||
+          p.description.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query)
+        );
+        renderProducts(filtered);
+      });
+    }
+  });
+</script>
+
+<?php include("footer.php"); ?>

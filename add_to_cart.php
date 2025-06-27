@@ -7,7 +7,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// Validate inputs
 $id = $_POST['id'] ?? '';
 $name = $_POST['name'] ?? '';
 $price = $_POST['price'] ?? 0;
@@ -19,12 +18,10 @@ if (!$id || !$name || !$price) {
     exit;
 }
 
-// Initialize cart session if not exists
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-// Add or update product quantity in cart
 if (isset($_SESSION['cart'][$id])) {
     $_SESSION['cart'][$id]['quantity'] += $quantity;
 } else {
@@ -37,13 +34,11 @@ if (isset($_SESSION['cart'][$id])) {
     ];
 }
 
-// Calculate total quantity for cart count
 $cartCount = 0;
 foreach ($_SESSION['cart'] as $item) {
     $cartCount += $item['quantity'];
 }
 
-// Return JSON response with success and updated cart count
 echo json_encode([
     'success' => true,
     'cartCount' => $cartCount

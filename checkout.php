@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("./Admin/conn.php");  // your mysqli connection file
+include("./Admin/conn.php");
 
 $successMsg = "";
 $errorMsg = "";
@@ -21,11 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder'])) {
     if (empty($cartItems)) {
         $errorMsg = "Your cart is empty. Please add products before checking out.";
     } else {
-        // Begin transaction
         mysqli_begin_transaction($connection);
 
         try {
-            // Insert customer
             $stmt = mysqli_prepare($connection, "INSERT INTO customers (name, address, email, workPhone, cellNo, dob, category, remarks) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             mysqli_stmt_bind_param($stmt, "ssssssss", $name, $address, $email, $workPhone, $cellNo, $dob, $category, $remarks);
             if (!mysqli_stmt_execute($stmt)) {
@@ -34,13 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder'])) {
             $customerId = mysqli_insert_id($connection);
             mysqli_stmt_close($stmt);
 
-            // Calculate total amount
             $totalAmount = 0;
             foreach ($cartItems as $item) {
                 $totalAmount += $item['price'] * $item['quantity'];
             }
-
-            // Insert order
             $stmt = mysqli_prepare($connection, "INSERT INTO orders (customer_id, total_amount) VALUES (?, ?)");
             mysqli_stmt_bind_param($stmt, "id", $customerId, $totalAmount);
             if (!mysqli_stmt_execute($stmt)) {
@@ -48,8 +43,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder'])) {
             }
             $orderId = mysqli_insert_id($connection);
             mysqli_stmt_close($stmt);
-
-            // Insert order items
             $stmt = mysqli_prepare($connection, "INSERT INTO order_items (order_id, product_name, quantity, price, subtotal) VALUES (?, ?, ?, ?, ?)");
             foreach ($cartItems as $item) {
                 $subtotal = $item['price'] * $item['quantity'];
@@ -60,68 +53,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirmOrder'])) {
             }
             mysqli_stmt_close($stmt);
 
-            // Commit transaction
             mysqli_commit($connection);
 
-            // Clear cart
             unset($_SESSION['cart']);
 
             $successMsg = "Order placed successfully! Thank you for your purchase.";
-
         } catch (Exception $e) {
             mysqli_rollback($connection);
             $errorMsg = "Error: " . $e->getMessage();
         }
     }
 }
-
 $title = "checkout page";
 include("header.php");
 ?>
-
-<style>
-    #showCheckOutProducts {
-        padding: 10px;
-        border-radius: 6px;
-    }
-    #showCheckOutProducts table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-    #showCheckOutProducts th, #showCheckOutProducts td {
-        padding: 8px 12px;
-    }
-    #showCheckOutProducts th {
-        text-align: left;
-    }
-    #showCheckOutProducts td:nth-child(2) {
-        text-align: center;
-    }
-    #showCheckOutProducts td:nth-child(3), 
-    #showCheckOutProducts td:nth-child(4) {
-        text-align: right;
-    }
-    #showCheckOutProducts tfoot th {
-        text-align: right;
-        font-weight: bold;
-    }
-
-    .message {
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 4px;
-    }
-    .success {
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
-    }
-    .error {
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
-    }
-</style>
 
 <div class="container checkout-container">
     <div class="row">
@@ -172,15 +117,38 @@ include("header.php");
                 <div class="message error"><?php echo $errorMsg; ?></div>
             <?php endif; ?>
 
-            <form method="POST" class="checkout-form" id="checkout-orderForm">
+            <form method="POST" class="checkout-form needs-validation" novalidate id="checkout-orderForm">
                 <div class="row g-3">
-                    <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Name" required></div>
-                    <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="Address" required></div>
-                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="E-mail" required></div>
-                    <div class="col-md-6"><input type="text" name="workPhone" class="form-control" placeholder="Work Phone No."></div>
-                    <div class="col-md-6"><input type="text" name="cellNo" class="form-control" placeholder="Cell No." required></div>
-                    <div class="col-md-6"><input type="date" name="dob" class="form-control"></div>
-                    <div class="col-md-6"><input type="text" name="category" class="form-control" placeholder="Category"></div>
+                    <div class="col-md-6"><input type="text" name="name" class="form-control" placeholder="Name" required>
+                        <div class="invalid-feedback">
+                            Please Provide a Name.
+                        </div>
+                    </div>
+                    <div class="col-md-6"><input type="text" name="address" class="form-control" placeholder="Address" required>
+                        <div class="invalid-feedback">
+                            Please Provide a Address.
+                        </div>
+                    </div>
+                    <div class="col-md-6"><input type="email" name="email" class="form-control" placeholder="E-mail" required>
+                        <div class="invalid-feedback">
+                            Please Provide a Email.
+                        </div>
+                    </div>
+                    <div class="col-md-6"><input type="text" name="workPhone" class="form-control" placeholder="Work Phone No." required>
+                        <div class="invalid-feedback">
+                            Please Provide a Work PHone.
+                        </div>
+                    </div>
+                    <div class="col-md-6"><input type="text" name="cellNo" class="form-control" placeholder="Cell No." required>
+                        <div class="invalid-feedback">
+                            Please Provide a Cell No.
+                        </div>
+                    </div>
+                    <div class="col-md-6"><input type="date" name="dob" class="form-control">
+                <div class="invalid-feedback">
+                            Please Provide a DOB.
+                        </div>
+                </div>
                     <div class="col-12"><textarea name="remarks" rows="3" class="form-control" placeholder="Remarks (Additional Information)"></textarea></div>
                     <p>WE PREFER CASH ON DELIVERY</p>
                     <div class="col-12"><button type="submit" name="confirmOrder" class="checkout-btn-submit">Confirm Order</button></div>
@@ -189,5 +157,25 @@ include("header.php");
         </div>
     </div>
 </div>
-
 <?php include("footer.php"); ?>
+<?php
+foreach ($cartItems as $item) {
+    $stmt = mysqli_prepare($connection, "UPDATE addcos SET Quantity = Quantity - ? WHERE CosTitle = ? AND Quantity >= ?");
+    mysqli_stmt_bind_param($stmt, "isi", $item['quantity'], $item['name'], $item['quantity']);
+    if (!mysqli_stmt_execute($stmt)) {
+        throw new Exception("Failed to update quantity for: " . $item['name']);
+    }
+    mysqli_stmt_close($stmt);
+}
+
+foreach ($cartItems as $item) {
+    $stmt1 = mysqli_prepare($connection, "UPDATE addjewellery SET Quantity = Quantity - ? WHERE JewelleryTitle = ? AND Quantity >= ?");
+    mysqli_stmt_bind_param($stmt1, "isi", $item['quantity'], $item['name'], $item['quantity']);
+    if (!mysqli_stmt_execute($stmt1)) {
+        throw new Exception("Failed to update quantity for: " . $item['name']);
+    }
+    mysqli_stmt_close($stmt1);
+}
+
+
+?>

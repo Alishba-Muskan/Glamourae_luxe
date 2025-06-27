@@ -99,47 +99,6 @@
 
 
 
-
-// function addToCart(id, name, price, image) {
-//     fetch('add_to_cart.php', {
-//         method: 'POST',
-//         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-//         body: new URLSearchParams({
-//             id: id,
-//             name: name,
-//             price: price,
-//             image: image,
-//             quantity: 1
-//         })
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         if(data.success){
-//             showToast(`${name} added to cart!`);
-
-//             // Update cart count from server response
-//             let cartCountElem = document.getElementById('cartCount');
-//             cartCountElem.textContent = data.cartCount;
-
-//         } else {
-//             showToast(`Error: ${data.message || 'Could not add to cart'}`);
-//         }
-//     })
-//     .catch(err => {
-//         console.error(err);
-//         showToast('Network error. Please try again.');
-//     });
-// }
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.getElementById('cartCount').textContent = <?php echo $cartCount; ?>;
-// });
-
-
-
-
-
 function addToCart(id, name, price, image) {
     fetch('add_to_cart.php', {
         method: 'POST',
@@ -176,6 +135,33 @@ function updateCartCountDisplay(count) {
     }
 }
 
+
+
+    window.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            const successMsg = document.querySelector('.message.success');
+            if (successMsg) {
+                successMsg.style.display = 'none';
+            }
+
+            const errorMsg = document.querySelector('.message.error');
+            if (errorMsg) {
+                errorMsg.style.display = 'none';
+            }
+        }, 5000);
+    });
+
+
+
+  
+  setTimeout(function() {
+    const flashMsg = document.getElementById('flash-msg');
+    if (flashMsg) {
+      flashMsg.style.transition = "opacity 0.5s ease";
+      flashMsg.style.opacity = 0;
+      setTimeout(() => flashMsg.remove(), 500); 
+    }
+  }, 5000);
 
 
 

@@ -2,7 +2,6 @@
 $title = "Blog Page";
 include("header.php");
 
-// Blog Posts Array
 $blogPosts = [
   [
     "id" => 1,

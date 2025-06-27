@@ -9,14 +9,53 @@ if(isset($_SESSION['EmailAddress']) == null){
     header("Location: ./Login.php");
 }
 
-// Disable caching
-header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
-header("Pragma: no-cache"); // HTTP 1.0.
-header("Expires: 0"); // Proxies
-
-
-
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache"); 
+header("Expires: 0"); 
 ?>
+
+<style>
+     :root {
+    --black: #000000;
+    --white: #ffffff;
+    --red: #e5233e;
+    --golden: #debd01;
+    --grey: rgb(41, 35, 35);
+    --text: #cccccc;
+  }
+
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+  overflow-x: hidden; 
+  overflow-y: auto;   
+}
+
+
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--black);
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--golden);
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d98c0d;
+  }
+
+</style>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -69,6 +108,8 @@ header("Expires: 0"); // Proxies
                     <a href="./AddJewellery.php" style="margin-top: 8px;" class="nav-item nav-link <?php echo $_SERVER['REQUEST_URI'] == '/Glamourae_Luxe/Admin/AddJewellery.php' ? 'active' : '' ?>"><i class="fas fa-gem"></i>   Add Jewellery</a>               
                     <a href="./ShowCos.php" style="margin-top: 8px;" class="nav-item nav-link <?php echo $_SERVER['REQUEST_URI'] == '/Glamourae_Luxe/Admin/ShowCos.php' ? 'active' : '' ?>"><i class="fas fa-magic"></i>   Show Cosmetics</a>               
                     <a href="./ShowJewellery.php" style="margin-top: 8px;" class="nav-item nav-link <?php echo $_SERVER['REQUEST_URI'] == '/Glamourae_Luxe/Admin/ShowJewellery.php' ? 'active' : '' ?>"><i class="fas fa-gem"></i>   Show Jewellery</a>               
+                    <a href="./AddTopSelling.php" style="margin-top: 8px;" class="nav-item nav-link <?php echo $_SERVER['REQUEST_URI'] == '/Glamourae_Luxe/Admin/AddTopSelling.php' ? 'active' : '' ?>"><i class="fas fa-gem"></i>   Add Top Selling</a>               
+                    <a href="./ShowTopsSelling.php" style="margin-top: 8px;" class="nav-item nav-link <?php echo $_SERVER['REQUEST_URI'] == '/Glamourae_Luxe/Admin/ShowTopSelling.php' ? 'active' : '' ?>"><i class="fas fa-gem"></i>   Show Top Selling</a>               
                 </div>
             </nav>
         </div>

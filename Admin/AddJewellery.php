@@ -37,6 +37,20 @@ include_once("header.php");
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="CosPrice">Jewellery Tier</label>
+                    <input type="text" name="JewelleryTier" id="CosPrice" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please choose a Cosmetic Tier.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CosPrice">Jewellery Quantity</label>
+                    <input type="number" name="Quantity" id="CosPrice" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please choose a Cosmetic Quantity.
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="JewelleryImage">Jewellery Image</label>
                     <input type="file" name="JewelleryImage" id="JewelleryImage" class="form-control" required accept="image/*" onchange="previewImage(event)">
                     <div class="invalid-feedback">
@@ -50,11 +64,11 @@ include_once("header.php");
                 <input type="submit" class="btn" value="Save Jewellery Card">
             </form>
             <?php if (isset($_GET['successmsg'])): ?>
-                <div class=" mt-3 alert alert-success" role="alert">
+                <div id="flash-msg" class=" mt-3 alert alert-success" role="alert">
                     <?php echo $_GET['successmsg']; ?>
                 </div>
             <?php elseif (isset($_GET['errormsg'])): ?>
-                <div class=" mt-3 alert alert-danger" role="alert">
+                <div id="flash-msg" class=" mt-3 alert alert-danger" role="alert">
                     <?php echo $_GET['errormsg']; ?>
                 </div>
             <?php endif ?>
@@ -78,6 +92,15 @@ include_once("header.php");
             });
         }, false);
     })();
+
+    setTimeout(function() {
+        const flashMsg = document.getElementById('flash-msg');
+        if (flashMsg) {
+            flashMsg.style.transition = "opacity 0.5s ease";
+            flashMsg.style.opacity = 0;
+            setTimeout(() => flashMsg.remove(), 500);
+        }
+    }, 5000);
 </script>
 
 

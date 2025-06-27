@@ -9,7 +9,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
     exit;
 }
 
-$id = mysqli_real_escape_string($connection, $_GET['id']); // fix syntax here
+$id = mysqli_real_escape_string($connection, $_GET['id']); 
 $query = "SELECT * FROM addcos WHERE CosId = '$id' LIMIT 1";
 $result = mysqli_query($connection, $query);
 
@@ -28,7 +28,7 @@ $imagePath = str_replace('../', '', $product['CosImage']);
     </div>
     <div class="product-detail-info">
         <h1><?php echo htmlspecialchars($product['CosTitle']); ?></h1>
-        <div class="price">$<?php echo number_format($product['CosPrice'], 2); ?></div>
+        <div class="price">Rs : <?php echo number_format($product['CosPrice'], 2); ?></div>
         <div class="category">Category: <?php echo ucfirst(strtolower($product['CosCategory'])); ?></div>
         <div class="quality">Quality: <?php echo ucfirst(strtolower($product['CosTier'])); ?></div>
         <p class="description"><?php echo htmlspecialchars($product['CosDesc']); ?></p>
@@ -84,7 +84,5 @@ function addToCart(id, name, price, image) {
     }, 3000);
 }
 
-
 </script>
-
 <?php include_once "footer.php"; ?>

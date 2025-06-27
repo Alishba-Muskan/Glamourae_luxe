@@ -1,10 +1,6 @@
 <?php
-$title = 'Admin Panel - Add_Jewellery Page';
+$title = 'Admin Panel - Show_Jewellery Page';
 include_once("header.php");
-
-
-
-
 ?>
 <div class="container-fluid pt-4 px-1">
     <div style="min-height: 72vh;" class="form-con row justify-content-center align-items-center mx-0">
@@ -29,11 +25,11 @@ include_once("header.php");
                     while ($row = mysqli_fetch_assoc($result)) { ?>
                         <tr>
                             <td><?php echo $row['JewelleryTitle'] ?></td>
-                            <td><?php echo $row['JewelleryDesc'] ?></td>
+                            <td><?php echo implode(' ', array_slice(explode(' ', $row['JewelleryDesc']), 0, 30)) . '...'; ?></td>
                             <td><?php echo $row['JewelleryCategory'] ?></td>
                             <td><?php echo $row['JewelleryPrice'] ?></td>
                             <td>
-                                <img src="<?php echo $row['JewelleryImage'] ?>" width="120" alt="">
+                                <img src="<?php echo $row['JewelleryImage'] ?>" width="140" alt="">
                             </td>
                             <td>
                                 <form action="delete_jewellery.php" method="post" onsubmit="return confirm('Are you sure you want to delete this product?');">
@@ -44,15 +40,6 @@ include_once("header.php");
                         </tr>
                     <?php } ?>
                 </tbody>
-                <?php if (isset($_GET['successmsg'])): ?>
-                    <div class=" mt-3 alert alert-success" role="alert">
-                        <?php echo $_GET['successmsg']; ?>
-                    </div>
-                <?php elseif (isset($_GET['errormsg'])): ?>
-                    <div class=" mt-3 alert alert-danger" role="alert">
-                        <?php echo $_GET['errormsg']; ?>
-                    </div>
-                <?php endif ?>
             </table>
         </div>
     </div>

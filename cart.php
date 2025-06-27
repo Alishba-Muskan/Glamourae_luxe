@@ -1,14 +1,13 @@
 <?php
 session_start();
 
-// Handle quantity update and removal
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['remove_id'])) {
         $removeId = $_POST['remove_id'];
         foreach ($_SESSION['cart'] as $key => $item) {
             if ($item['id'] == $removeId) {
                 unset($_SESSION['cart'][$key]);
-                $_SESSION['cart'] = array_values($_SESSION['cart']); // re-index array
+                $_SESSION['cart'] = array_values($_SESSION['cart']); 
                 break;
             }
         }
@@ -54,7 +53,7 @@ include("header.php");
         <tbody>
             <?php
             $total = 0;
-            $cartItems = array_values($_SESSION['cart'] ?? []); // Re-index cart items to fix S.no
+            $cartItems = array_values($_SESSION['cart'] ?? []);
             if (!empty($cartItems)) {
                 foreach ($cartItems as $index => $item) {
                     $subtotal = $item['price'] * $item['quantity'];

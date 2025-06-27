@@ -60,11 +60,11 @@ if (isset($_REQUEST['register'])) {
                         <div class="row justify-content-center">
                             <div class="col-md-12">
                                 <?php if (isset($_GET['successmsg'])): ?>
-                                    <div class="mb-3 alert alert-success text-center" role="alert">
+                                    <div id="flash-msg" class="mb-3 alert alert-success text-center" role="alert">
                                         <?php echo $_GET['successmsg']; ?>
                                     </div>
                                 <?php elseif (isset($_GET['errormsg'])): ?>
-                                    <div class="mb-3 alert alert-danger text-center" role="alert">
+                                    <div id="flash-msg" class="mb-3 alert alert-danger text-center" role="alert">
                                         <?php echo $_GET['errormsg']; ?>
                                     </div>
                                 <?php endif ?>

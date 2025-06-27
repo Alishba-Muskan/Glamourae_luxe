@@ -7,13 +7,15 @@ $CosDesc = mysqli_real_escape_string($connection, $_REQUEST['CosDesc']);
 $CosCategory = mysqli_real_escape_string($connection, $_REQUEST['CosCategory']);
 $CosTier = mysqli_real_escape_string($connection, $_REQUEST['CosTier']);
 $CosPrice = floatval($_REQUEST['CosPrice']);
+$Quantity = intval($_REQUEST['cosquantity']);
+
 $originalname = $_FILES['CosImage']['name'];
 $temparoryname = $_FILES['CosImage']['tmp_name'];
 $folder = "../Assets/CosmeticsImages/" . $originalname;
 
 if (move_uploaded_file($temparoryname, $folder)) {
-    $AddCosQuery = "INSERT INTO `addcos` (`CosTitle`, `CosDesc`, `CosCategory`, `CosPrice`, `CosTier`, `CosImage`) 
-    VALUES ('$CosTitle', '$CosDesc', '$CosCategory', $CosPrice, '$CosTier', '$folder')";
+    $AddCosQuery = "INSERT INTO `addcos` (`CosTitle`, `CosDesc`, `CosCategory`, `CosPrice`, `CosTier`, `Quantity`, `CosImage`) 
+    VALUES ('$CosTitle', '$CosDesc', '$CosCategory', $CosPrice, '$CosTier', $Quantity, '$folder')";
 
     if (mysqli_query($connection, $AddCosQuery)) {
         mysqli_close($connection);

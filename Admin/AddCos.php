@@ -39,11 +39,18 @@ include_once("header.php");
                         Please choose a Cosmetic Price.
                     </div>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="CosPrice">Cosmetic Tier</label>
-                    <input type="number" name="CosTier" id="CosPrice" class="form-control" required>
+                    <input type="text" name="CosTier" id="CosPrice" class="form-control" required>
                     <div class="invalid-feedback">
                         Please choose a Cosmetic Tier.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CosPrice">Cosmetic Quantity</label>
+                    <input type="number" name="cosquantity" id="CosPrice" class="form-control" required>
+                    <div class="invalid-feedback">
+                        Please choose a Cosmetic Quantity.
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,7 +66,7 @@ include_once("header.php");
                 <input type="submit" class="btn" value="Save Cosmetic Card">
             </form>
             <?php if (isset($_GET['successmsg'])): ?>
-                <div class=" mt-3 alert alert-success" role="alert">
+                <div id="flash-msg" class=" mt-3 alert alert-success" role="alert">
                     <?php echo $_GET['successmsg']; ?>
                 </div>
             <?php elseif (isset($_GET['errormsg'])): ?>
@@ -87,6 +94,17 @@ include_once("header.php");
             });
         }, false);
     })();
+
+      setTimeout(function() {
+    const flashMsg = document.getElementById('flash-msg');
+    if (flashMsg) {
+      flashMsg.style.transition = "opacity 0.5s ease";
+      flashMsg.style.opacity = 0;
+      setTimeout(() => flashMsg.remove(), 500); 
+    }
+  }, 5000);
+
+
 </script>
 
 <?php include_once("footer.php"); ?>

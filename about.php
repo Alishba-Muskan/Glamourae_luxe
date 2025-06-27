@@ -14,7 +14,6 @@ include("header.php");
   </div>
 </section>
 
-<!-- About Perks -->
 <div class="about-container">
     <div class="about-about-intro">
         <div class="about-about-text">
@@ -43,7 +42,6 @@ include("header.php");
         </div>
     </div>
 
-    <!-- Our Story -->
     <div class="about-our-story">
         <div class="about-subtitle">Our Story</div>
         <p>Jenny began her journey by connecting with friends and relatives, showcasing her cosmetic and imitation jewelry collection. As demand grew and client numbers increased, she envisioned a platform that could handle orders efficiently while keeping personal connections intact.</p>
@@ -51,7 +49,6 @@ include("header.php");
         <p>With admin features like adding/deleting products, updating catalogs, and generating sales reports, our platform also supports efficient business administration and growth.</p>
     </div>
 
-    <!-- Why Choose Us -->
     <div class="about-why-choose">
         <div class="about-subtitle">Happy Clients</div>
         <h2>Why <strong>Choose Us</strong></h2>
@@ -70,7 +67,6 @@ include("header.php");
     </div>
 </div>
 
-<!-- Services Section -->
 <div class="about-services-section">
     <div class="about-subtitle">With Our Whole Heart</div>
     <h2>Our Services / <strong>How It Works</strong></h2>

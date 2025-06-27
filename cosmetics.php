@@ -18,21 +18,36 @@ while ($row = mysqli_fetch_assoc($result)) {
         'price' => floatval($row['CosPrice']),
         'category' => $category,
         'quality' => strtolower(trim($row['CosTier'])),
-        'image' => str_replace('../', '', $row['CosImage'])
+        'image' => str_replace('../', '', $row['CosImage']),
+        'quantity' => (int)$row['Quantity']
     ];
 }
 
 $categoryArray = [
-    ['id' => 'lips', 'name' => 'Lips', 'icon' => 'fa-kiss-wink-heart', 'banner' => './Images/lips.png'],
-    ['id' => 'face', 'name' => 'Face', 'icon' => 'fa-sun', 'banner' => './Images/face.png'],
-    ['id' => 'eyes', 'name' => 'Eyes', 'icon' => 'fa-eye', 'banner' => './Images/eyes.png'],
-    ['id' => 'palettes', 'name' => 'Palettes', 'icon' => 'fa-palette', 'banner' => './Images/Palletes.png'],
-    ['id' => 'brushes', 'name' => 'Brushes', 'icon' => 'fa-brush', 'banner' => './Images/brushes.png']
+    ['id' => 'lips', 'name' => 'Lips', 'icon' => 'fa-kiss-wink-heart', 'banner' => './Assets/Images/Lips.png'],
+    ['id' => 'face', 'name' => 'Face', 'icon' => 'fa-sun', 'banner' => './Assets/Images/face.png'],
+    ['id' => 'eyes', 'name' => 'Eyes', 'icon' => 'fa-eye', 'banner' => './Assets/Images/eyes.png'],
+    ['id' => 'palettes', 'name' => 'Blushes', 'icon' => 'fa-palette', 'banner' => './Assets/Images/Palletes.png'],
+    ['id' => 'brushes', 'name' => 'Brushes', 'icon' => 'fa-brush', 'banner' => './Assets/Images/brushes.png']
 ];
+
+
 ?>
 
 
-<!-- UI Layout: Sidebar + Main Content -->
+<style>
+    .product--disabled {
+    opacity: 1;
+    pointer-events: none;
+}
+.product__stock-status {
+    font-size: 18px;
+    color: #e5233e;
+    font-weight: bold;
+}
+
+</style>
+
 <div class="app">
     <aside class="side_panel side_panel--expanded" id="sidePanel">
         <div class="sidebar__section">
@@ -71,7 +86,7 @@ $categoryArray = [
 
     <main class="content">
         <div class="banner" id="categoryBanner">
-            <img src="./Images/allProducts.png" alt="All Products" class="banner__image">
+            <img src="./Assets/Images/allProducts.png" alt="All Products" class="banner__image">
         </div>
 
         <div class="toolbar">
@@ -104,6 +119,7 @@ $categoryArray = [
 <div id="toast"></div>
 
 <script>
+
     const productsData = <?= json_encode([
                                 'items' => $productArray,
                                 'categories' => $categoryArray
@@ -111,6 +127,9 @@ $categoryArray = [
 </script>
 
 <script>
+
+
+
     const DOM = {
         categoryList: document.getElementById('categoryList'),
         productGrid: document.getElementById('productGrid'),
@@ -175,30 +194,36 @@ $categoryArray = [
 
     function createProductCard(p) {
         const shortDesc = p.description.length > 30 ? p.description.substring(0, 30) + "..." : p.description;
+        const outOfStock = p.quantity === 0;
+
         return `
-        <div class="product">
-            <div class="product__media">
-                <img src="${p.image}" alt="${p.name}" class="product__image">
+    <div class="product ${outOfStock ? 'product--disabled' : ''}">
+        <div class="product__media">
+            <img src="${p.image}" alt="${p.name}" class="product__image">
+        </div>
+        <div class="product__details">
+            <span class="product__category">${p.category}</span>
+            <h3 class="product__title">${p.name}</h3>
+            <p class="product__description">${shortDesc}</p>
+            <div class="product__footer">
+                <div class="product__price">Rs : ${p.price.toFixed(2)}</div>
+                ${outOfStock
+                    ? `<div class="product__stock-status">Out of Stock</div>`
+                    : `<button type="button" class="product__button" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-image="${p.image}">
+                        <i class="fas fa-shopping-bag"></i> ADD TO CART
+                    </button>`
+                }
             </div>
-            <div class="product__details">
-                <span class="product__category">${p.category}</span>
-                <h3 class="product__title">${p.name}</h3>
-                <p class="product__description">${shortDesc}</p>
-                <div class="product__footer">
-                    <div class="product__price">$${p.price.toFixed(2)}</div>
-                   <button type="button" class="product__button" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-image="${p.image}">
-                       <i class="fas fa-shopping-bag"></i> ADD TO CART
-                   </button>
-                </div>
-                <p class="productcard_viewdetail"><a href="cosmetic_detail.php?id=${encodeURIComponent(p.id)}">View Details</a></p>
-            </div>
-        </div>`;
+            <p class="productcard_viewdetail"><a href="cosmetic_detail.php?id=${encodeURIComponent(p.id)}">View Details →</a></p>
+        </div>
+    </div>`;
     }
+
 
     function updateCategoryBanner() {
         const cat = currentFilters.category;
         if (cat === 'all') {
-            DOM.categoryBanner.innerHTML = `<img src="./Images/allProducts.png" alt="All Products" class="banner__image">`;
+            DOM.categoryBanner.innerHTML = `<img src="./Assets/Images/allProducts.png" alt="All Products" class="banner__image">`;
         } else {
             const c = productsData.categories.find(x => x.id === cat);
             if (c) {
@@ -249,7 +274,6 @@ $categoryArray = [
             });
         });
 
-        // ✅ Add to cart button listener with event delegation
         DOM.productGrid.addEventListener('click', e => {
             const btn = e.target.closest('.product__button');
             if (!btn) return;
@@ -281,6 +305,14 @@ $categoryArray = [
     const searchInput = document.getElementById('searchInput');
 
     searchInput.addEventListener('input', (e) => {
+        currentFilters.searchQuery = e.target.value.trim().toLowerCase();
+        renderProducts();
+    });
+
+
+      const fullsearchinput = document.getElementById('fullsearchinput');
+
+    fullsearchinput.addEventListener('input', (e) => {
         currentFilters.searchQuery = e.target.value.trim().toLowerCase();
         renderProducts();
     });

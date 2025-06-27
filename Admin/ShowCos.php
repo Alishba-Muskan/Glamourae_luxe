@@ -1,10 +1,8 @@
 <?php
-$title = 'Admin Panel - Add_Jewellery Page';
+$title = 'Admin Panel - Show_Cosmetics Page';
 include_once("header.php");
-
-
-
 ?>
+
 <div class="container-fluid pt-4 px-1">
     <div style="min-height: 72vh;" class="form-con row justify-content-center align-items-center mx-0">
         <div class="col-lg-10 col-md-8 glass-box">
@@ -17,7 +15,7 @@ include_once("header.php");
                         <th>Cosmetic Category</th>
                         <th>Cosmetic Price</th>
                         <th>Cosmetic Image</th>
-                         <th>Cosmetic Delete</th>
+                        <th>Cosmetic Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,11 +26,11 @@ include_once("header.php");
                     while ($row = mysqli_fetch_assoc($result)) { ?>
                         <tr>
                             <td><?php echo $row['CosTitle'] ?></td>
-                            <td><?php echo $row['CosDesc'] ?></td>
+                            <td><?php echo implode(' ', array_slice(explode(' ', $row['CosDesc']), 0, 30)) . '...'; ?></td>
                             <td><?php echo $row['CosCategory'] ?></td>
                             <td><?php echo $row['CosPrice'] ?></td>
                             <td>
-                                <img src="<?php echo $row['CosImage'] ?>" width="60" height="100" alt="">
+                                <img src="<?php echo $row['CosImage'] ?>" width="80" height="100" alt="">
                             </td>
                             <td>
                                 <form action="delete_cosmetic.php" method="post" onsubmit="return confirm('Are you sure you want to delete this product?');">
@@ -43,17 +41,6 @@ include_once("header.php");
                         </tr>
                     <?php } ?>
                 </tbody>
-
-                <?php if (isset($_GET['successmsg'])): ?>
-                    <div class=" mt-3 alert alert-success" role="alert">
-                        <?php echo $_GET['successmsg']; ?>
-                    </div>
-                <?php elseif (isset($_GET['errormsg'])): ?>
-                    <div class=" mt-3 alert alert-danger" role="alert">
-                        <?php echo $_GET['errormsg']; ?>
-                    </div>
-                <?php endif ?>
-
             </table>
         </div>
     </div>

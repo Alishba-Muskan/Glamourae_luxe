@@ -1,34 +1,53 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$title = "Comapre & Choose Page";
+include_once "./Admin/conn.php";
 
-
-$conn = new mysqli("localhost", "root", "", "compare_page");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$ids = isset($_GET['products']) ? $_GET['products'] : [];
-if (!is_array($ids)) $ids = explode(',', $ids);
-$ids = array_filter(array_map('intval', $ids));
-$placeholders = implode(',', array_fill(0, count($ids), '?'));
+$selected = isset($_GET['products']) ? $_GET['products'] : [];
+if (!is_array($selected)) $selected = [$selected];
 $products = [];
+foreach ($selected as $item) {
+    list($cat, $id) = explode('-', $item);
+    $id = intval($id);
 
-if ($placeholders) {
-    $stmt = $conn->prepare("SELECT * FROM products WHERE id IN ($placeholders)");
-    $stmt->bind_param(str_repeat('i', count($ids)), ...$ids);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    while ($row = $result->fetch_assoc()) {
-        $products[] = $row;
+    if ($cat == 'Jewelry') {
+        $stmt = $connection->prepare("SELECT * FROM addjewellery WHERE JewelleryId = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        if ($row) {
+            $products[] = [
+                'id' => $row['JewelleryId'],
+                'name' => htmlspecialchars($row['JewelleryTitle']),
+                'price' => $row['JewelleryPrice'],
+                'features' => htmlspecialchars($row['JewelleryDesc']),
+                'image_url' => str_replace('../', '', $row['JewelleryImage']),
+                'category' => 'Jewelry'
+            ];
+        }
+    } elseif ($cat == 'Cosmetics') {
+        $stmt = $connection->prepare("SELECT * FROM addcos WHERE CosId = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        if ($row) {
+            $products[] = [
+                'id' => $row['CosId'],
+                'name' => htmlspecialchars($row['CosTitle']),
+                'price' => $row['CosPrice'],
+                'features' => htmlspecialchars($row['CosDesc']),
+                'image_url' => str_replace('../', '', $row['CosImage']),
+                'category' => 'Cosmetics'
+            ];
+        }
     }
 }
-
 
 include("header.php");
 ?>
 
-
-
+<section class="hp-hero" style="--hero-bg: url('./Images/compare.jpg');"></section>
 <div class="cmp2-container">
     <h1 class="cmp2-title">Product Comparison</h1>
     <?php if ($products): ?>
@@ -47,21 +66,9 @@ include("header.php");
                 <?php endforeach; ?>
             </tr>
             <tr>
-                <th>Brand</th>
-                <?php foreach ($products as $p): ?>
-                    <td><?php echo $p['brand']; ?></td>
-                <?php endforeach; ?>
-            </tr>
-            <tr>
                 <th>Price</th>
                 <?php foreach ($products as $p): ?>
                     <td>Rs. <?php echo $p['price']; ?></td>
-                <?php endforeach; ?>
-            </tr>
-            <tr>
-                <th>Rating</th>
-                <?php foreach ($products as $p): ?>
-                    <td><?php echo $p['rating']; ?> ⭐</td>
                 <?php endforeach; ?>
             </tr>
             <tr>
@@ -77,7 +84,4 @@ include("header.php");
     <?php endif; ?>
 </div>
 
-
-    <?php
-include("footer.php");
-    ?>
+<?php include("footer.php"); ?>

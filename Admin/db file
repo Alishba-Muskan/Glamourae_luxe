@@ -13,23 +13,27 @@ CREATE TABLE contact_messages (
 
 
 
-CREATE TABLE AddCos(
-CosId int PRIMARY KEY AUTO_INCREMENT,
-CosTitle varchar(50),
-CosDesc text,
-CosCategory varchar(50),
-CosPrice int,
-CosImage varchar(50)
+CREATE TABLE AddCos (
+    CosId int PRIMARY KEY AUTO_INCREMENT,
+    CosTitle varchar(50),
+    CosDesc text,
+    CosCategory varchar(50),
+    CosPrice int,
+    CosImage varchar(50),
+    CosTier varchar(50),
+    Quantity int
 );
 
 
 CREATE TABLE AddJewellery(
 JewelleryId int PRIMARY KEY AUTO_INCREMENT,
 JewelleryTitle varchar(50),
-JewelleryDesc varchar(50),
+JewelleryDesc text,
 JewelleryCategory varchar(50),
 JewelleryPrice int,
 JewelleryImage varchar(50)
+ JewelleryTier varchar(50),
+ Quantity int
 );
 
 
@@ -44,6 +48,16 @@ Roles varchar(30) DEFAULT 'User'
 
 
 
+CREATE TABLE TopSelling (
+    TopSellingId INT PRIMARY KEY AUTO_INCREMENT,
+    TopSellingTitle VARCHAR(50),
+    TopSellingDesc VARCHAR(50),
+    TopSellingCategory VARCHAR(50),
+    TopSellingPrice INT,
+    TopSellingImage VARCHAR(50),
+    TopSellingTier VARCHAR(50),
+    TopSellingQuantity INT
+);
 
 
 
